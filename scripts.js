@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para manipulação do carrossel (placeholder)
   setupCarousel();
 
-  // Função para manipulação da barra de pesquisa (placeholder)
+  // Função para manipulação da barra de pesquisa
   setupSearch();
 
   // Função para manipulação de interações (hover effects, etc.)
@@ -21,8 +21,17 @@ function setupCarousel() {
 
 function setupSearch() {
   console.log("Search setup initialized");
-  // Placeholder para configuração da barra de pesquisa
-  // Implementação será adicionada nos próximos dias
+
+  const searchButton = document.getElementById("search-button");
+  const searchInput = document.getElementById("search-input");
+
+  searchButton.addEventListener("click", () => {
+    const query = searchInput.value;
+    if (query) {
+      alert(`You searched for: ${query}`);
+      // Implementação futura: realizar a busca com a API e exibir os resultados
+    }
+  });
 }
 
 function setupInteractions() {
