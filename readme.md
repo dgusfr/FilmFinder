@@ -33,3 +33,16 @@ FilmFinder/
 ├── scripts.js
 ├── README.md
 ```
+
+## Como Usar
+
+Clone o repositório:
+
+`git clone https://github.com/seu-usuario/FilmFinder.git`
+
+Navegue até o diretório do projeto:
+
+`cd FilmFinder
+Abra o index.html no seu navegador preferido para visualizar o projeto.
+Autor
+Desenvolvido por Diego.
