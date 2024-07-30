@@ -73,7 +73,17 @@ nav .menu a:hover {
   margin-bottom: 5px;
 }
 
+.details p,
+.details ul {
+  margin: 5px 0;
+}
+
+.details ul {
+  padding-left: 20px;
+}
+
 .details iframe {
   width: 560px;
   height: 315px;
+  margin-top: 10px;
 }
