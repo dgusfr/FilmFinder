@@ -23,5 +23,4 @@ function setupSearch() {
 
 function setupInteractions() {
   console.log("Interactions setup initialized");
-  // Implementação será adicionada nos próximos dias
 }
