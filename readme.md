@@ -4,9 +4,9 @@
 
 O **FilmFinder** é um projeto em desenvolvimento que visa clonar a página de detalhes de filmes do IMDb. Este projeto é ideal para praticar habilidades front-end, incluindo HTML, CSS e JavaScript, além de integrar APIs para dados dinâmicos.
 
-## Status do Projeto
+## Status
 
-🚧 Projeto em desenvolvimento 🚧
+![Em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge)
 
 ## Tecnologias Utilizadas
 
