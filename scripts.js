@@ -42,6 +42,4 @@ function setupSearch() {
 
 function setupInteractions() {
   console.log("Interactions setup initialized");
-  // Placeholder para interações adicionais
-  // Implementação será adicionada nos próximos dias
 }
