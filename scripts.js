@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setupCarousel() {
   console.log("Carousel setup initialized");
-  // Implementação será adicionada nos próximos dias
 }
 
 function setupSearch() {
