@@ -17,7 +17,6 @@ function setupSearch() {
     const query = searchInput.value;
     if (query) {
       alert(`You searched for: ${query}`);
-      // Implementação futura: realizar a busca com a API e exibir os resultados
     }
   });
 }
