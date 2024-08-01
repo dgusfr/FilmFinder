@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para manipulação do carrossel (placeholder)
   setupCarousel();
 
-  // Função para manipulação da barra de pesquisa
   setupSearch();
 
   setupInteractions();
