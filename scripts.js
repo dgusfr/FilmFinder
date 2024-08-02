@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setupCarousel() {
   console.log("Carousel setup initialized");
-  // Placeholder para configuração do carrossel
-  // Implementação será adicionada nos próximos dias
 }
 
 function setupSearch() {
@@ -44,7 +42,7 @@ function setupInteractions() {
 }
 
 function loadMovieData(movieId) {
-  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const apiKey = "your_api_key_here";
   const url = `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`;
 
   fetch(url)
