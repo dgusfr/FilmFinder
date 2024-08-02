@@ -9,11 +9,11 @@ body {
 }
 
 nav {
-  background-color: #555555;
+  background-color: #333;
   color: white;
   padding: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -41,9 +41,13 @@ nav .search-bar button {
   font-size: 1em;
   border: none;
   border-radius: 4px;
-  background-color: #313131;
+  background-color: #555;
   color: white;
   cursor: pointer;
+}
+
+nav .search-bar button:hover {
+  background-color: #666;
 }
 
 nav .menu a {
@@ -58,8 +62,9 @@ nav .menu a:hover {
 
 .movie-container {
   display: flex;
+  flex-wrap: wrap;
   padding: 20px;
-  background-color: rgb(211, 211, 211);
+  background-color: white;
   margin: 20px auto;
   max-width: 1200px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -67,12 +72,15 @@ nav .menu a:hover {
 }
 
 .poster img {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   border-radius: 8px;
 }
 
 .details {
+  flex: 1;
   margin-left: 20px;
+  min-width: 300px;
 }
 
 .details h1 {
@@ -83,7 +91,7 @@ nav .menu a:hover {
 
 .details h2 {
   margin-bottom: 5px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #444;
 }
 
@@ -103,9 +111,51 @@ nav .menu a:hover {
 }
 
 .details iframe {
-  width: 600px;
-  height: 300px;
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
   margin-top: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav .search-bar input {
+    flex: 1;
+  }
+
+  nav .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .movie-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .details {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .details iframe {
+    width: 100%;
+    height: auto;
+  }
 }
