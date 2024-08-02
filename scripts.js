@@ -79,5 +79,5 @@ function displayMovieData(movie) {
     .join("");
   document.querySelector(
     ".details iframe"
-  ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
+  ).src = `https://www.youtube.com/embed/${movie.trailer}`;
 }
