@@ -6,6 +6,7 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   color: #333;
+  transition: background-color 0.3s ease;
 }
 
 nav {
@@ -16,11 +17,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav .logo {
   font-size: 1.5em;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav .search-bar {
@@ -34,6 +37,7 @@ nav .search-bar input {
   border: none;
   border-radius: 4px;
   margin-right: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav .search-bar button {
@@ -44,20 +48,24 @@ nav .search-bar button {
   background-color: #555;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav .search-bar button:hover {
   background-color: #666;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 nav .menu a {
   color: white;
   text-decoration: none;
   margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
 nav .menu a:hover {
   text-decoration: underline;
+  color: #ddd;
 }
 
 .movie-container {
@@ -69,30 +77,39 @@ nav .menu a:hover {
   max-width: 1200px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  transition: box-shadow 0.3s ease;
 }
 
 .poster img {
   width: 100%;
   max-width: 300px;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.poster img:hover {
+  transform: scale(1.05);
 }
 
 .details {
   flex: 1;
   margin-left: 20px;
   min-width: 300px;
+  transition: transform 0.3s ease;
 }
 
 .details h1 {
   margin-top: 0;
   font-size: 2em;
   color: #444;
+  transition: color 0.3s ease;
 }
 
 .details h2 {
   margin-bottom: 5px;
   font-size: 1.5em;
   color: #444;
+  transition: color 0.3s ease;
 }
 
 .details p,
@@ -100,6 +117,7 @@ nav .menu a:hover {
   margin: 5px 0;
   font-size: 1.1em;
   line-height: 1.5em;
+  transition: color 0.3s ease;
 }
 
 .details ul {
@@ -117,6 +135,11 @@ nav .menu a:hover {
   margin-top: 10px;
   border: none;
   border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.details iframe:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsividade */
