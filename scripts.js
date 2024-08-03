@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
-  // Carregar dados do filme
   loadMovieData("tt0111161");
 });
 
