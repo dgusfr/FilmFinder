@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Document is fully loaded");
 
-  // Função para manipulação do carrossel (placeholder)
   setupCarousel();
 
   setupSearch();
