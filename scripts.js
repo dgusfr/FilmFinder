@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para manipulação da barra de pesquisa
   setupSearch();
 
-  // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
   loadMovieData("tt0111161");
