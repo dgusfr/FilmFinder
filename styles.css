@@ -68,6 +68,32 @@ nav .menu a:hover {
   color: #ddd;
 }
 
+.search-results {
+  padding: 20px;
+  background-color: white;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-results .result {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-results .result img {
+  width: 50px;
+  height: 75px;
+  margin-right: 20px;
+}
+
+.search-results .result h3 {
+  margin: 0;
+}
+
 .movie-container {
   display: flex;
   flex-wrap: wrap;
