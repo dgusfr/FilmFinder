@@ -13,3 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Carregar dados do filme
   loadMovieData("tt0111161"); // Exemplo de ID de filme
 });
+function setupCarousel() {
+  console.log("Carousel setup initialized");
+  // Placeholder para configuração do carrossel
+  // Implementação será adicionada nos próximos dias
+}
