@@ -57,3 +57,27 @@ function loadMovieData(movieId) {
       console.error("Error fetching movie data:", error);
     });
 }
+
+function displayMovieData(movie) {
+  document.querySelector(".poster img").src = movie.Poster;
+  document.querySelector(".details h1").innerText = movie.Title;
+  document.querySelector(
+    ".details p:nth-of-type(1)"
+  ).innerText = `Rating: ${movie.imdbRating}/10`;
+  document.querySelector(
+    ".details p:nth-of-type(2)"
+  ).innerText = `Release Date: ${movie.Released}`;
+  document.querySelector(
+    ".details p:nth-of-type(3)"
+  ).innerText = `Duration: ${movie.Runtime}`;
+  document.querySelector(
+    ".details p:nth-of-type(4)"
+  ).innerText = `Genre: ${movie.Genre}`;
+  document.querySelector(".details p:nth-of-type(5)").innerText = movie.Plot;
+  document.querySelector(".details ul").innerHTML = movie.Actors.split(", ")
+    .map((actor) => `<li>${actor}</li>`)
+    .join("");
+  document.querySelector(
+    ".details iframe"
+  ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
+}
