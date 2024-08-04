@@ -10,13 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
-  // Carregar dados do filme
-  loadMovieData("tt0111161"); // Exemplo de ID de filme
+  loadMovieData("tt0111161");
 });
 function setupCarousel() {
   console.log("Carousel setup initialized");
-  // Placeholder para configuração do carrossel
-  // Implementação será adicionada nos próximos dias
 }
 function setupSearch() {
   console.log("Search setup initialized");
@@ -39,12 +36,10 @@ function setupSearch() {
 }
 function setupInteractions() {
   console.log("Interactions setup initialized");
-  // Placeholder para interações adicionais
-  // Implementação será adicionada nos próximos dias
 }
 
 function loadMovieData(movieId) {
-  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const apiKey = "your_api_key_here";
   const url = `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`;
 
   fetch(url)
@@ -79,11 +74,11 @@ function displayMovieData(movie) {
     .join("");
   document.querySelector(
     ".details iframe"
-  ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
+  ).src = `https://www.youtube.com/embed/${movie.trailer}`;
 }
 
 function performSearch(query) {
-  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const apiKey = "your_api_key_here";
   const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
 
   fetch(url)
