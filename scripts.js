@@ -81,3 +81,18 @@ function displayMovieData(movie) {
     ".details iframe"
   ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
 }
+
+function performSearch(query) {
+  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      displaySearchResults(data.Search);
+    })
+    .catch((error) => {
+      console.error("Error fetching search results:", error);
+    });
+}
