@@ -42,3 +42,18 @@ function setupInteractions() {
   // Placeholder para interações adicionais
   // Implementação será adicionada nos próximos dias
 }
+
+function loadMovieData(movieId) {
+  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const url = `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      displayMovieData(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching movie data:", error);
+    });
+}
