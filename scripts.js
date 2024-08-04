@@ -10,10 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
-  loadMovieData("tt0111161");
+  // Carregar dados do filme
+  loadMovieData("tt0111161"); // Exemplo de ID de filme
 });
 function setupCarousel() {
   console.log("Carousel setup initialized");
+  // Placeholder para configuração do carrossel
+  // Implementação será adicionada nos próximos dias
 }
 function setupSearch() {
   console.log("Search setup initialized");
@@ -36,10 +39,12 @@ function setupSearch() {
 }
 function setupInteractions() {
   console.log("Interactions setup initialized");
+  // Placeholder para interações adicionais
+  // Implementação será adicionada nos próximos dias
 }
 
 function loadMovieData(movieId) {
-  const apiKey = "your_api_key_here";
+  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
   const url = `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`;
 
   fetch(url)
