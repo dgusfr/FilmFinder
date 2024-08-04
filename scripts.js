@@ -1,27 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Document is fully loaded");
 
-  setupCarousel();
-
-  setupSearch();
-
-  setupInteractions();
-
-  loadMovieData("tt0111161");
-});
-
-function setupCarousel() {
-  console.log("Carousel setup initialized");
-}
-function setupSearch() {
-  console.log("Search setup initialized");
-
-  const searchButton = document.getElementById("search-button");
-  const searchInput = document.getElementById("search-input");
-
-  searchButton.addEventListener("click", () => {
-    const query = searchInput.value;
-    if (query) {
       performSearch(query);
     }
   });
