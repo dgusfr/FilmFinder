@@ -136,22 +136,22 @@ function loadPopularMovies() {
 }
 
 function displayCarousel(movies) {
-  const carouselContainer = document.getElementById("carousel-container");
-  carouselContainer.innerHTML = "";
+  const carouselContainer = document.getElementById('carousel-container');
+  carouselContainer.innerHTML = '';
 
   if (movies) {
-    movies.forEach((movie) => {
-      const movieElement = document.createElement("div");
-      movieElement.className = "carousel-item";
-      movieElement.innerHTML = `
+      movies.forEach(movie => {
+          const movieElement = document.createElement('div');
+          movieElement.className = 'carousel-item';
+          movieElement.innerHTML = `
               <img src="${movie.Poster}" alt="${movie.Title}">
           `;
-      movieElement.addEventListener("click", () => {
-        loadMovieData(movie.imdbID);
+          movieElement.addEventListener('click', () => {
+              loadMovieData(movie.imdbID);
+          });
+          carouselContainer.appendChild(movieElement);
       });
-      carouselContainer.appendChild(movieElement);
-    });
   } else {
-    carouselContainer.innerHTML = "<p>No popular movies found.</p>";
+      carouselContainer.innerHTML = '<p>No popular movies found.</p>';
   }
 }
