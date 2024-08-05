@@ -1,3 +1,5 @@
+// scripts.js
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Document is fully loaded");
 
@@ -7,15 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para manipulação da barra de pesquisa
   setupSearch();
 
+  // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
+  // Carregar dados do filme
   loadMovieData("tt0111161"); // Exemplo de ID de filme
 
+  // Carregar filmes populares
   loadPopularMovies();
 });
 
 function setupCarousel() {
   console.log("Carousel setup initialized");
+  // Placeholder para configuração do carrossel
+  // Implementação será adicionada nos próximos dias
 }
 
 function setupSearch() {
@@ -40,6 +47,9 @@ function setupSearch() {
 
 function setupInteractions() {
   console.log("Interactions setup initialized");
+  // Placeholder para interações adicionais
+  // Implementação será adicionada nos próximos dias
+}
 
 function loadMovieData(movieId) {
   const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
@@ -109,7 +119,6 @@ function displaySearchResults(results) {
           `;
       resultElement.addEventListener("click", () => {
         loadMovieData(result.imdbID);
-        // Limpar os resultados da busca após clicar
         searchResultsContainer.innerHTML = "";
         document.getElementById("search-input").value = "";
       });
@@ -136,22 +145,22 @@ function loadPopularMovies() {
 }
 
 function displayCarousel(movies) {
-  const carouselContainer = document.getElementById('carousel-container');
-  carouselContainer.innerHTML = '';
+  const carouselContainer = document.getElementById("carousel-container");
+  carouselContainer.innerHTML = "";
 
   if (movies) {
-      movies.forEach(movie => {
-          const movieElement = document.createElement('div');
-          movieElement.className = 'carousel-item';
-          movieElement.innerHTML = `
+    movies.forEach((movie) => {
+      const movieElement = document.createElement("div");
+      movieElement.className = "carousel-item";
+      movieElement.innerHTML = `
               <img src="${movie.Poster}" alt="${movie.Title}">
           `;
-          movieElement.addEventListener('click', () => {
-              loadMovieData(movie.imdbID);
-          });
-          carouselContainer.appendChild(movieElement);
+      movieElement.addEventListener("click", () => {
+        loadMovieData(movie.imdbID);
       });
+      carouselContainer.appendChild(movieElement);
+    });
   } else {
-      carouselContainer.innerHTML = '<p>No popular movies found.</p>';
+    carouselContainer.innerHTML = "<p>No popular movies found.</p>";
   }
 }
