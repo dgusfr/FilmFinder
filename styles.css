@@ -108,5 +108,134 @@ nav .menu a:hover {
 .search-results .result {
   display: flex;
   align-items: center;
-  margin-bottom: 10;
+  margin-bottom: 10px;
+}
+
+.search-results .result img {
+  width: 50px;
+  height: 75px;
+  margin-right: 20px;
+}
+
+.search-results .result h3 {
+  margin: 0;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: white;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.poster img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.poster img:hover {
+  transform: scale(1.05);
+}
+
+.details {
+  flex: 1;
+  margin-left: 20px;
+  min-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.details h1 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.details h2 {
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.details p,
+.details ul {
+  margin: 5px 0;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.details ul {
+  padding-left: 20px;
+}
+
+.details ul li {
+  margin-bottom: 5px;
+}
+
+.details iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.details iframe:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav .search-bar input {
+    flex: 1;
+  }
+
+  nav .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+  }
+
+  .movie-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .details {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .details iframe {
+    width: 100%;
+    height: auto;
+  }
 }
