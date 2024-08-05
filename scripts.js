@@ -85,7 +85,7 @@ function displayMovieData(movie) {
     .join("");
   document.querySelector(
     ".details iframe"
-  ).src = `https://www.youtube.com/embed/${movie.trailer}`;
+  ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
 }
 
 function performSearch(query) {
