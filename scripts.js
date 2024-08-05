@@ -127,3 +127,18 @@ function displaySearchResults(results) {
     searchResultsContainer.innerHTML = "<p>No results found.</p>";
   }
 }
+
+function loadPopularMovies() {
+  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const url = `https://www.omdbapi.com/?s=popular&type=movie&apikey=${apiKey}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      displayCarousel(data.Search);
+    })
+    .catch((error) => {
+      console.error("Error fetching popular movies:", error);
+    });
+}
