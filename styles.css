@@ -108,4 +108,5 @@ nav .menu a:hover {
 .search-results .result {
   display: flex;
   align-items: center;
-  margin-bottom: 10
+  margin-bottom: 10;
+}
