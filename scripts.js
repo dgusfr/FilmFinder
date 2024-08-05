@@ -89,7 +89,7 @@ function displayMovieData(movie) {
 }
 
 function performSearch(query) {
-  const apiKey = "your_api_key_here";
+  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
   const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
 
   fetch(url)
