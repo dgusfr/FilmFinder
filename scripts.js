@@ -19,8 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setupCarousel() {
   console.log("Carousel setup initialized");
-  // Placeholder para configuração do carrossel
-  // Implementação será adicionada nos próximos dias
 }
 
 function setupSearch() {
