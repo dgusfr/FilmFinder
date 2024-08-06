@@ -132,7 +132,7 @@ function displaySearchResults(results) {
 }
 
 function loadPopularMovies() {
-  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const apiKey = "your_api_key_here";
   const url = `https://www.omdbapi.com/?s=popular&type=movie&apikey=${apiKey}`;
 
   fetch(url)
