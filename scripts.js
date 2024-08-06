@@ -121,7 +121,6 @@ function displaySearchResults(results) {
           `;
       resultElement.addEventListener("click", () => {
         loadMovieData(result.imdbID);
-        // Limpar os resultados da busca após clicar
         searchResultsContainer.innerHTML = "";
         document.getElementById("search-input").value = "";
       });
