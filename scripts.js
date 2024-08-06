@@ -33,24 +33,17 @@ function setupCarousel() {
 }
 
 function setupSearch() {
-  console.log('Search setup initialized');
-  
-  const searchButton = document.getElementById('search-button');
-  const searchInput = document.getElementById('search-input');
+  console.log("Search setup initialized");
 
-  searchButton.addEventListener('click', () => {
-      const query = searchInput.value;
-      if (query) {
-          performSearch(query);
-      }
-  });
+  const searchButton = document.getElementById("search-button");
+  const searchInput = document.getElementById("search-input");
 
-  searchInput.addEventListener('keypress', (event) => {
-      if (event.key === 'Enter') {
-          searchButton.click();
-      }
+  searchButton.addEventListener("click", () => {
+    const query = searchInput.value;
+    if (query) {
+      performSearch(query);
+    }
   });
-}
 
   searchInput.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
