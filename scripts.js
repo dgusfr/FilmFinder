@@ -150,8 +150,8 @@ function loadPopularMovies() {
 }
 
 function displayCarousel(movies) {
-  const carouselContainer = document.getElementById("carousel-container");
-  carouselContainer.innerHTML = "";
+  const carousel = document.getElementById("carousel");
+  carousel.innerHTML = "";
 
   if (movies) {
     movies.forEach((movie) => {
@@ -163,9 +163,9 @@ function displayCarousel(movies) {
       movieElement.addEventListener("click", () => {
         loadMovieData(movie.imdbID);
       });
-      carouselContainer.appendChild(movieElement);
+      carousel.appendChild(movieElement);
     });
   } else {
-    carouselContainer.innerHTML = "<p>No popular movies found.</p>";
+    carousel.innerHTML = "<p>No popular movies found.</p>";
   }
 }
