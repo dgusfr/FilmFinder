@@ -89,11 +89,11 @@ function displayMovieData(movie) {
     .join("");
   document.querySelector(
     ".details iframe"
-  ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
+  ).src = `https://www.youtube.com/embed/${movie.trailer}`;
 }
 
 function performSearch(query) {
-  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const apiKey = "your_api_key_here";
   const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
 
   fetch(url)
