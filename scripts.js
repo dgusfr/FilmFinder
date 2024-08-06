@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupSearch();
 
-  // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
   // Carregar dados do filme
