@@ -19,8 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function setupCarousel() {
   console.log("Carousel setup initialized");
-  // Placeholder para configuração do carrossel
-  // Implementação será adicionada nos próximos dias
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+  const carousel = document.getElementById("carousel");
+
+  prevBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: -220, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: 220, behavior: "smooth" });
+  });
 }
 
 function setupSearch() {
