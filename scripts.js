@@ -33,17 +33,24 @@ function setupCarousel() {
 }
 
 function setupSearch() {
-  console.log("Search setup initialized");
+  console.log('Search setup initialized');
+  
+  const searchButton = document.getElementById('search-button');
+  const searchInput = document.getElementById('search-input');
 
-  const searchButton = document.getElementById("search-button");
-  const searchInput = document.getElementById("search-input");
-
-  searchButton.addEventListener("click", () => {
-    const query = searchInput.value;
-    if (query) {
-      performSearch(query);
-    }
+  searchButton.addEventListener('click', () => {
+      const query = searchInput.value;
+      if (query) {
+          performSearch(query);
+      }
   });
+
+  searchInput.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+          searchButton.click();
+      }
+  });
+}
 
   searchInput.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
