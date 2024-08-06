@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadMovieData("tt0111161");
 
-  // Carregar filmes populares
   loadPopularMovies();
 });
 
