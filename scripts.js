@@ -1,3 +1,5 @@
+// scripts.js
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Document is fully loaded");
 
@@ -96,6 +98,7 @@ function displayMovieData(movie) {
     ".details iframe"
   ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
 }
+
 function performSearch(query) {
   const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
   const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
@@ -110,6 +113,7 @@ function performSearch(query) {
       console.error("Error fetching search results:", error);
     });
 }
+
 function displaySearchResults(results) {
   const searchResultsContainer = document.getElementById("search-results");
   searchResultsContainer.innerHTML = "";
@@ -133,6 +137,21 @@ function displaySearchResults(results) {
   } else {
     searchResultsContainer.innerHTML = "<p>No results found.</p>";
   }
+}
+
+function loadPopularMovies() {
+  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const url = `https://www.omdbapi.com/?s=popular&type=movie&apikey=${apiKey}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      displayCarousel(data.Search);
+    })
+    .catch((error) => {
+      console.error("Error fetching popular movies:", error);
+    });
 }
 
 function displayCarousel(movies) {
