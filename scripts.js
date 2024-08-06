@@ -124,6 +124,7 @@ function displaySearchResults(results) {
           `;
       resultElement.addEventListener("click", () => {
         loadMovieData(result.imdbID);
+        // Limpar os resultados da busca após clicar
         searchResultsContainer.innerHTML = "";
         document.getElementById("search-input").value = "";
       });
@@ -133,7 +134,6 @@ function displaySearchResults(results) {
     searchResultsContainer.innerHTML = "<p>No results found.</p>";
   }
 }
-
 function loadPopularMovies() {
   const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
   const url = `https://www.omdbapi.com/?s=popular&type=movie&apikey=${apiKey}`;
