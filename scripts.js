@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupInteractions();
 
-  // Carregar dados do filme
   loadMovieData("tt0111161"); // Exemplo de ID de filme
 
   // Carregar filmes populares
