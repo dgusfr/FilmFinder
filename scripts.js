@@ -1,9 +1,7 @@
-// scripts.js
-
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Document is fully loaded");
 
-  // Função para manipulação do carrossel (placeholder)
+  // Função para manipulação do carrossel
   setupCarousel();
 
   // Função para manipulação da barra de pesquisa
