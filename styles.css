@@ -69,6 +69,7 @@ nav .menu a:hover {
 }
 
 .carousel-container {
+  position: relative;
   padding: 20px;
   background-color: white;
   margin: 20px auto;
@@ -76,23 +77,48 @@ nav .menu a:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
-  white-space: nowrap;
 }
 
-.carousel-container .carousel-item {
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
   display: inline-block;
   width: 200px;
   margin-right: 10px;
 }
 
-.carousel-container .carousel-item img {
+.carousel-item img {
   width: 100%;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
-.carousel-container .carousel-item img:hover {
+.carousel-item img:hover {
   transform: scale(1.05);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+#prev-btn {
+  left: 10px;
+}
+
+#next-btn {
+  right: 10px;
 }
 
 .search-results {
