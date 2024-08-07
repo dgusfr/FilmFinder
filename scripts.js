@@ -1,7 +1,7 @@
 // scripts.js
 
 let currentPage = 1;
-const itemsPerPage = 4; // Número de filmes favoritos por página
+const itemsPerPage = 4;
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Document is fully loaded");
