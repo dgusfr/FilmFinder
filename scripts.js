@@ -18,10 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupFavorites();
 
-  // Configurar paginação
   setupPagination();
 
-  // Carregar e exibir favoritos
   displayFavorites();
 });
 
