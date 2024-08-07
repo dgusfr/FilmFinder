@@ -3,72 +3,64 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Document is fully loaded");
 
+  // Função para manipulação do carrossel
   setupCarousel();
 
+  // Função para manipulação da barra de pesquisa
   setupSearch();
 
+  // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
-  loadMovieData("tt0111161");
+  // Carregar dados do filme
+  loadMovieData("tt0111161"); // Exemplo de ID de filme
 
+  // Carregar filmes populares
   loadPopularMovies();
+
+  // Configurar favoritos
+  setupFavorites();
 });
 
-function setupCarousel() {
-  console.log("Carousel setup initialized");
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
-  const carousel = document.getElementById("carousel");
-
-  prevBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: -220, behavior: "smooth" });
-  });
-
-  nextBtn.addEventListener("click", () => {
-    carousel.scrollBy({ left: 220, behavior: "smooth" });
-  });
-}
-
-function setupSearch() {
-  console.log("Search setup initialized");
-
-  const searchButton = document.getElementById("search-button");
-  const searchInput = document.getElementById("search-input");
-
-  searchButton.addEventListener("click", () => {
-    const query = searchInput.value;
-    if (query) {
-      performSearch(query);
+function setupFavorites() {
+  document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("favorite-btn")) {
+      const movieId = event.target.getAttribute("data-movie-id");
+      toggleFavorite(movieId, event.target);
     }
   });
 
-  searchInput.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-      searchButton.click();
+  loadFavorites();
+}
+
+function toggleFavorite(movieId, element) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  if (favorites.includes(movieId)) {
+    favorites = favorites.filter((id) => id !== movieId);
+    element.classList.remove("favorited");
+  } else {
+    favorites.push(movieId);
+    element.classList.add("favorited");
+  }
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+function loadFavorites() {
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  document.querySelectorAll(".favorite-btn").forEach((button) => {
+    const movieId = button.getAttribute("data-movie-id");
+    if (favorites.includes(movieId)) {
+      button.classList.add("favorited");
     }
   });
 }
 
-function setupInteractions() {
-  console.log("Interactions setup initialized");
-}
-
-function loadMovieData(movieId) {
-  const apiKey = "your_api_key_here";
-  const url = `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`;
-
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      displayMovieData(data);
-    })
-    .catch((error) => {
-      console.error("Error fetching movie data:", error);
-    });
-}
-
+// Atualize a função displayMovieData para incluir o botão de favoritos
 function displayMovieData(movie) {
+  const favoriteButton = document.querySelector(".details .favorite-btn");
+  favoriteButton.setAttribute("data-movie-id", movie.imdbID);
+  loadFavorites(); // Atualize o estado do botão de favoritos
+
   document.querySelector(".poster img").src = movie.Poster;
   document.querySelector(".details h1").innerText = movie.Title;
   document.querySelector(
@@ -89,61 +81,7 @@ function displayMovieData(movie) {
     .join("");
   document.querySelector(
     ".details iframe"
-  ).src = `https://www.youtube.com/embed/${movie.trailer}`;
-}
-
-function performSearch(query) {
-  const apiKey = "your_api_key_here";
-  const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
-
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      displaySearchResults(data.Search);
-    })
-    .catch((error) => {
-      console.error("Error fetching search results:", error);
-    });
-}
-
-function displaySearchResults(results) {
-  const searchResultsContainer = document.getElementById("search-results");
-  searchResultsContainer.innerHTML = "";
-
-  if (results) {
-    results.forEach((result) => {
-      const resultElement = document.createElement("div");
-      resultElement.className = "result";
-      resultElement.innerHTML = `
-              <img src="${result.Poster}" alt="${result.Title}">
-              <h3>${result.Title} (${result.Year})</h3>
-          `;
-      resultElement.addEventListener("click", () => {
-        loadMovieData(result.imdbID);
-        searchResultsContainer.innerHTML = "";
-        document.getElementById("search-input").value = "";
-      });
-      searchResultsContainer.appendChild(resultElement);
-    });
-  } else {
-    searchResultsContainer.innerHTML = "<p>No results found.</p>";
-  }
-}
-
-function loadPopularMovies() {
-  const apiKey = "your_api_key_here";
-  const url = `https://www.omdbapi.com/?s=popular&type=movie&apikey=${apiKey}`;
-
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      displayCarousel(data.Search);
-    })
-    .catch((error) => {
-      console.error("Error fetching popular movies:", error);
-    });
+  ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
 }
 
 function displayCarousel(movies) {
@@ -156,12 +94,15 @@ function displayCarousel(movies) {
       movieElement.className = "carousel-item";
       movieElement.innerHTML = `
               <img src="${movie.Poster}" alt="${movie.Title}">
+              <button class="favorite-btn" data-movie-id="${movie.imdbID}">❤️</button>
           `;
       movieElement.addEventListener("click", () => {
         loadMovieData(movie.imdbID);
       });
       carousel.appendChild(movieElement);
     });
+
+    loadFavorites(); // Atualize o estado dos botões de favoritos no carrossel
   } else {
     carousel.innerHTML = "<p>No popular movies found.</p>";
   }
