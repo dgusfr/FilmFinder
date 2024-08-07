@@ -232,6 +232,31 @@ nav .menu a:hover {
   color: red;
 }
 
+.favorites-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.favorites-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.favorite-item {
+  width: 150px;
+  text-align: center;
+}
+
+.favorite-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
