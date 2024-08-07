@@ -8,10 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupCarousel();
 
-  // Função para manipulação da barra de pesquisa
   setupSearch();
 
-  // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
   // Carregar dados do filme
