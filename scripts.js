@@ -1,5 +1,3 @@
-// scripts.js
-
 let currentPage = 1;
 const itemsPerPage = 4;
 
