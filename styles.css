@@ -257,6 +257,32 @@ nav .menu a:hover {
   border-radius: 5px;
 }
 
+/* Adicionar ao CSS existente */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.page-btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#pageIndicator {
+  font-size: 16px;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
