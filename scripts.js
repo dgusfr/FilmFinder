@@ -20,90 +20,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Configurar favoritos
   setupFavorites();
+
+  // Carregar e exibir favoritos
+  displayFavorites();
 });
 
-function setupFavorites() {
-  document.addEventListener("click", (event) => {
-    if (event.target.classList.contains("favorite-btn")) {
-      const movieId = event.target.getAttribute("data-movie-id");
-      toggleFavorite(movieId, event.target);
-    }
-  });
-
-  loadFavorites();
-}
-
-function toggleFavorite(movieId, element) {
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  if (favorites.includes(movieId)) {
-    favorites = favorites.filter((id) => id !== movieId);
-    element.classList.remove("favorited");
-  } else {
-    favorites.push(movieId);
-    element.classList.add("favorited");
-  }
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-}
-
-function loadFavorites() {
+function displayFavorites() {
   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  document.querySelectorAll(".favorite-btn").forEach((button) => {
-    const movieId = button.getAttribute("data-movie-id");
-    if (favorites.includes(movieId)) {
-      button.classList.add("favorited");
-    }
-  });
-}
+  const favoritesContainer = document.getElementById("favorites");
+  favoritesContainer.innerHTML = "";
 
-// Atualize a função displayMovieData para incluir o botão de favoritos
-function displayMovieData(movie) {
-  const favoriteButton = document.querySelector(".details .favorite-btn");
-  favoriteButton.setAttribute("data-movie-id", movie.imdbID);
-  loadFavorites(); // Atualize o estado do botão de favoritos
-
-  document.querySelector(".poster img").src = movie.Poster;
-  document.querySelector(".details h1").innerText = movie.Title;
-  document.querySelector(
-    ".details p:nth-of-type(1)"
-  ).innerText = `Rating: ${movie.imdbRating}/10`;
-  document.querySelector(
-    ".details p:nth-of-type(2)"
-  ).innerText = `Release Date: ${movie.Released}`;
-  document.querySelector(
-    ".details p:nth-of-type(3)"
-  ).innerText = `Duration: ${movie.Runtime}`;
-  document.querySelector(
-    ".details p:nth-of-type(4)"
-  ).innerText = `Genre: ${movie.Genre}`;
-  document.querySelector(".details p:nth-of-type(5)").innerText = movie.Plot;
-  document.querySelector(".details ul").innerHTML = movie.Actors.split(", ")
-    .map((actor) => `<li>${actor}</li>`)
-    .join("");
-  document.querySelector(
-    ".details iframe"
-  ).src = `https://www.youtube.com/embed/${movie.trailer}`; // Ajuste conforme necessário
-}
-
-function displayCarousel(movies) {
-  const carousel = document.getElementById("carousel");
-  carousel.innerHTML = "";
-
-  if (movies) {
-    movies.forEach((movie) => {
-      const movieElement = document.createElement("div");
-      movieElement.className = "carousel-item";
-      movieElement.innerHTML = `
-              <img src="${movie.Poster}" alt="${movie.Title}">
-              <button class="favorite-btn" data-movie-id="${movie.imdbID}">❤️</button>
-          `;
-      movieElement.addEventListener("click", () => {
-        loadMovieData(movie.imdbID);
+  if (favorites.length > 0) {
+    favorites.forEach((movieId) => {
+      fetchMovieData(movieId, (movie) => {
+        const movieElement = document.createElement("div");
+        movieElement.className = "favorite-item";
+        movieElement.innerHTML = `
+                  <img src="${movie.Poster}" alt="${movie.Title}">
+                  <h3>${movie.Title}</h3>
+              `;
+        movieElement.addEventListener("click", () => {
+          loadMovieData(movie.imdbID);
+        });
+        favoritesContainer.appendChild(movieElement);
       });
-      carousel.appendChild(movieElement);
     });
-
-    loadFavorites(); // Atualize o estado dos botões de favoritos no carrossel
   } else {
-    carousel.innerHTML = "<p>No popular movies found.</p>";
+    favoritesContainer.innerHTML = "<p>No favorite movies found.</p>";
   }
+}
+
+function fetchMovieData(movieId, callback) {
+  const apiKey = "your_api_key_here"; // Substitua pela sua chave de API OMDb
+  const url = `https://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      callback(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching movie data:", error);
+    });
 }
