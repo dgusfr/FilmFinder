@@ -66,7 +66,7 @@ function removeFavorite(movieId) {
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   favorites = favorites.filter((id) => id !== movieId);
   localStorage.setItem("favorites", JSON.stringify(favorites));
-  displayFavorites(); // Atualizar a exibição de favoritos
+  displayFavorites();
 }
 
 function fetchMovieData(movieId, callback) {
