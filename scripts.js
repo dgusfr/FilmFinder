@@ -57,7 +57,6 @@ function displayFavorites() {
     favoritesContainer.innerHTML = "<p>No favorite movies found.</p>";
   }
 
-  // Atualizar estado dos botões de paginação
   pageIndicator.textContent = `Página ${currentPage}`;
   prevPageBtn.disabled = currentPage === 1;
   nextPageBtn.disabled = end >= favorites.length;
