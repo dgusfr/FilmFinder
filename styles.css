@@ -283,6 +283,20 @@ nav .menu a:hover {
   font-size: 16px;
 }
 
+.remove-favorite {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-favorite:hover {
+  background-color: #ff1a1a;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
