@@ -47,7 +47,6 @@ function displayFavorites() {
       });
     });
 
-    // Adicionar eventos aos botões de remoção
     document.querySelectorAll(".remove-favorite").forEach((button) => {
       button.addEventListener("click", (event) => {
         const movieId = event.target.getAttribute("data-id");
