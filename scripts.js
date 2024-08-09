@@ -92,3 +92,12 @@ function showNotification(message) {
     notification.classList.remove("show");
   }, 3000);
 }
+
+function addFavorite(movieId) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  if (!favorites.includes(movieId)) {
+    favorites.push(movieId);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    showNotification("Filme adicionado aos favoritos!");
+  }
+}
