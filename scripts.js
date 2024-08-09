@@ -12,7 +12,6 @@ function showNotification(message) {
   }, 3000);
 }
 
-// Modificar as funções de adicionar e remover favoritos para incluir notificações
 function addFavorite(movieId) {
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
   if (!favorites.includes(movieId)) {
