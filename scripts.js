@@ -101,3 +101,11 @@ function addFavorite(movieId) {
     showNotification("Filme adicionado aos favoritos!");
   }
 }
+
+function removeFavorite(movieId) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  favorites = favorites.filter((id) => id !== movieId);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  showNotification("Filme removido dos favoritos!");
+  displayFavorites(); // Atualizar a exibição de favoritos
+}
