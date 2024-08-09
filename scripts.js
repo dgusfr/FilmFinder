@@ -88,7 +88,6 @@ function showNotification(message) {
   notification.textContent = message;
   notification.classList.add("show");
 
-  // Remover a notificação após 3 segundos
   setTimeout(() => {
     notification.classList.remove("show");
   }, 3000);
