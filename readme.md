@@ -1,6 +1,6 @@
 # FilmFinder
 
-## Descrição
+### Descrição
 
 O **FilmFinder** é um projeto em desenvolvimento que visa clonar a página de detalhes de filmes do IMDb. Este projeto é ideal para praticar habilidades front-end, incluindo HTML, CSS e JavaScript, além de integrar APIs para dados dinâmicos.
 
