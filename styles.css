@@ -315,6 +315,25 @@ nav .menu a:hover {
   opacity: 1;
 }
 
+#genre-filter {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#genre-filter label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#genres {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
