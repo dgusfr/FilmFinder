@@ -63,44 +63,63 @@ function setupLoadMoreButton() {
 }
 
 function loadPopularMovies(page = 1) {
-  const popularMoviesContainer = document.getElementById('popular-movies');
+  const popularMoviesContainer = document.getElementById("popular-movies");
 
   // Exemplo de filmes populares por página
   const moviesPerPage = [
-      [
-          {
-              imdbID: 'tt0111161',
-              Title: 'The Shawshank Redemption',
-              Poster: 'https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg',
-              Genre: 'Drama, Crime'
-          },
-          {
-              imdbID: 'tt0468569',
-              Title: 'The Dark Knight',
-              Poster: 'https://image.tmdb.org/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg',
-              Genre: 'Action, Crime, Drama'
-          }
-      ],
-      [
-          {
-              imdbID: 'tt0137523',
-              Title: 'Fight Club',
-              Poster: 'https://image.tmdb.org/t/p/w500/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg',
-              Genre: 'Drama'
-          },
-          {
-              imdbID: 'tt0120737',
-              Title: 'The Lord of the Rings: The Fellowship of the Ring',
-              Poster: 'https://image.tmdb.org/t/p/w500/56zTpe2xvaA4alU51sRWPoKPYZy.jpg',
-              Genre: 'Adventure, Fantasy, Action'
-          }
-      ]
-      // Adicione mais páginas conforme necessário
+    [
+      {
+        imdbID: "tt0111161",
+        Title: "The Shawshank Redemption",
+        Poster:
+          "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+        Genre: "Drama, Crime",
+      },
+      {
+        imdbID: "tt0468569",
+        Title: "The Dark Knight",
+        Poster:
+          "https://image.tmdb.org/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg",
+        Genre: "Action, Crime, Drama",
+      },
+    ],
+    [
+      {
+        imdbID: "tt0137523",
+        Title: "Fight Club",
+        Poster:
+          "https://image.tmdb.org/t/p/w500/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg",
+        Genre: "Drama",
+      },
+      {
+        imdbID: "tt0120737",
+        Title: "The Lord of the Rings: The Fellowship of the Ring",
+        Poster:
+          "https://image.tmdb.org/t/p/w500/56zTpe2xvaA4alU51sRWPoKPYZy.jpg",
+        Genre: "Adventure, Fantasy, Action",
+      },
+    ],
+    // Adicione mais páginas conforme necessário
   ];
 
   const movies = moviesPerPage[page - 1] || [];
   if (movies.length === 0) {
-      const loadMoreButton = document.getElementById('load-more-button');
-      loadMoreButton.style.display = 'none'; // Oculta o botão se não houver mais filmes
-      return;
+    const loadMoreButton = document.getElementById("load-more-button");
+    loadMoreButton.style.display = "none"; // Oculta o botão se não houver mais filmes
+    return;
   }
+
+  movies.forEach((movie) => {
+    const movieElement = document.createElement("div");
+    movieElement.className = "movie-item";
+    movieElement.setAttribute("data-genres", movie.Genre);
+    movieElement.innerHTML = `
+        <img src="${movie.Poster}" alt="${movie.Title}">
+        <h3>${movie.Title}</h3>
+    `;
+    movieElement.addEventListener("click", () => {
+      loadMovieData(movie.imdbID);
+    });
+    popularMoviesContainer.appendChild(movieElement);
+  });
+}
