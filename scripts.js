@@ -15,19 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Carregar dados do filme
   loadMovieData("tt0111161"); // Exemplo de ID de filme
 
-  // Carregar filmes populares
   loadPopularMovies();
 
-  // Configurar favoritos
   setupFavorites();
 
-  // Configurar paginação
   setupPagination();
 
-  // Carregar e exibir favoritos
   displayFavorites();
 
-  // Configurar filtro por gênero
   setupGenreFilter();
 
   setupLoadMoreButton();
