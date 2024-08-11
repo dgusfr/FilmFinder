@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Configurar botão de "Ver Mais"
   setupLoadMoreButton();
+
+  setupMovieDetails();
 });
 
 function setupGenreFilter() {
