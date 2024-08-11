@@ -154,7 +154,6 @@ function loadMovieData(movieId) {
     imdbRating: "9.3",
   };
 
-  // Exibir detalhes do filme
   const movieDetailsSection = document.getElementById("movie-details");
   const movieInfoDiv = document.getElementById("movie-info");
 
