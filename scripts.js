@@ -109,7 +109,6 @@ function loadPopularMovies(page = 1) {
         Genre: "Adventure, Fantasy, Action",
       },
     ],
-    // Adicione mais páginas conforme necessário
   ];
 
   const movies = moviesPerPage[page - 1] || [];
