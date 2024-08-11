@@ -135,7 +135,6 @@ function loadPopularMovies(page = 1) {
 }
 
 function loadMovieData(movieId) {
-  // Simulação de dados do filme
   const movie = {
     Title: "The Shawshank Redemption",
     Year: "1994",
