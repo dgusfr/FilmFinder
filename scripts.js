@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Configurar filtro por gênero
   setupGenreFilter();
 
-  // Configurar botão de "Ver Mais"
   setupLoadMoreButton();
 
   setupMovieDetails();
@@ -75,7 +74,6 @@ function setupMovieDetails() {
 function loadPopularMovies(page = 1) {
   const popularMoviesContainer = document.getElementById("popular-movies");
 
-  // Exemplo de filmes populares por página
   const moviesPerPage = [
     [
       {
