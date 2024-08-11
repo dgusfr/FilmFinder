@@ -133,3 +133,41 @@ function loadPopularMovies(page = 1) {
     popularMoviesContainer.appendChild(movieElement);
   });
 }
+
+function loadMovieData(movieId) {
+  // Simulação de dados do filme
+  const movie = {
+    Title: "The Shawshank Redemption",
+    Year: "1994",
+    Rated: "R",
+    Released: "14 Oct 1994",
+    Runtime: "142 min",
+    Genre: "Drama",
+    Director: "Frank Darabont",
+    Writer: "Stephen King, Frank Darabont",
+    Actors: "Tim Robbins, Morgan Freeman, Bob Gunton",
+    Plot: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    Language: "English",
+    Country: "USA",
+    Awards: "Nominated for 7 Oscars. Another 21 wins & 36 nominations total.",
+    Poster: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
+    imdbRating: "9.3",
+  };
+
+  // Exibir detalhes do filme
+  const movieDetailsSection = document.getElementById("movie-details");
+  const movieInfoDiv = document.getElementById("movie-info");
+
+  movieInfoDiv.innerHTML = `
+      <img src="${movie.Poster}" alt="${movie.Title}">
+      <h3>${movie.Title} (${movie.Year})</h3>
+      <p><strong>Rating:</strong> ${movie.imdbRating}</p>
+      <p><strong>Runtime:</strong> ${movie.Runtime}</p>
+      <p><strong>Genre:</strong> ${movie.Genre}</p>
+      <p><strong>Director:</strong> ${movie.Director}</p>
+      <p><strong>Plot:</strong> ${movie.Plot}</p>
+  `;
+
+  document.querySelector("main").classList.add("hidden");
+  movieDetailsSection.classList.remove("hidden");
+}
