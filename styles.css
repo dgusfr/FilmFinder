@@ -349,6 +349,51 @@ nav .menu a:hover {
   background-color: #45a049;
 }
 
+#movie-details {
+  margin: 20px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  color: #fff;
+}
+
+#movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#movie-info img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+#movie-info h3 {
+  margin: 20px 0 10px;
+}
+
+#movie-info p {
+  margin: 10px 0;
+}
+
+#back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#back-button:hover {
+  background-color: #e60000;
+}
+
+.hidden {
+  display: none;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
