@@ -1,4 +1,4 @@
-// scripts.js
+let currentPage = 1; // Página atual para a funcionalidade "Ver Mais"
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Document is fully loaded");
@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Configurar filtro por gênero
   setupGenreFilter();
+
+  // Configurar botão de "Ver Mais"
+  setupLoadMoreButton();
 });
 
 function setupGenreFilter() {
