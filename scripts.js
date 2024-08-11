@@ -54,6 +54,14 @@ function filterMoviesByGenre(genre) {
   });
 }
 
+function setupLoadMoreButton() {
+  const loadMoreButton = document.getElementById("load-more-button");
+  loadMoreButton.addEventListener("click", () => {
+    currentPage++;
+    loadPopularMovies(currentPage);
+  });
+}
+
 function loadPopularMovies() {
   // Substitua essa parte com a lógica para carregar filmes populares,
   // e adicione o atributo data-genres com os gêneros do filme
