@@ -115,7 +115,7 @@ function loadPopularMovies(page = 1) {
   const movies = moviesPerPage[page - 1] || [];
   if (movies.length === 0) {
     const loadMoreButton = document.getElementById("load-more-button");
-    loadMoreButton.style.display = "none"; // Oculta o botão se não houver mais filmes
+    loadMoreButton.style.display = "none";
     return;
   }
 
