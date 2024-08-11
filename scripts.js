@@ -64,6 +64,14 @@ function setupLoadMoreButton() {
   });
 }
 
+function setupMovieDetails() {
+  const backButton = document.getElementById("back-button");
+  backButton.addEventListener("click", () => {
+    document.getElementById("movie-details").classList.add("hidden");
+    document.querySelector("main").classList.remove("hidden");
+  });
+}
+
 function loadPopularMovies(page = 1) {
   const popularMoviesContainer = document.getElementById("popular-movies");
 
