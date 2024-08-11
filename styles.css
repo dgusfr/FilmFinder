@@ -334,6 +334,21 @@ nav .menu a:hover {
   color: #fff;
 }
 
+#load-more-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#load-more-button:hover {
+  background-color: #45a049;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
