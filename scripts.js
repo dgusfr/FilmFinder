@@ -24,8 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLoadMoreButton();
 
   setupMovieDetails();
-
   setupSharing();
+
+  // Configurar recomendações
+  setupRecommendations();
 });
 
 function setupGenreFilter() {
