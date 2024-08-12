@@ -200,3 +200,17 @@ function setupRecommendations() {
       recommendationsSection.classList.add('hidden');
       return;
   }
+  const recommendedMovies = getRecommendations(favoriteMovies);
+
+  recommendedMovies.forEach(movie => {
+      const movieElement = document.createElement('div');
+      movieElement.className = 'movie-item';
+      movieElement.innerHTML = `
+          <img src="${movie.Poster}" alt="${movie.Title}">
+          <h3>${movie.Title}</h3>
+      `;
+      movieElement.addEventListener('click', () => {
+          loadMovieData(movie.imdbID);
+      });
+      recommendedMoviesContainer.appendChild(movieElement);
+  });
