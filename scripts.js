@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLoadMoreButton();
 
   setupMovieDetails();
+
+  setupSharing();
 });
 
 function setupGenreFilter() {
