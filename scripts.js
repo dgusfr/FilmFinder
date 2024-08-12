@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLoadMoreButton();
 
   setupMovieDetails();
+
   setupSharing();
 
-  // Configurar recomendações
   setupRecommendations();
 });
 
@@ -223,7 +223,6 @@ function setupRecommendations() {
 }
 
 function getRecommendations(favoriteMovies) {
-  // Simulação de lógica de recomendação
   const allMovies = [
     {
       imdbID: "tt0109830",
