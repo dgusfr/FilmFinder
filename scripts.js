@@ -159,18 +159,31 @@ function loadMovieData(movieId) {
 }
 
 function setupSharing() {
-  const shareButton = document.getElementById('share-button');
-  const copyLinkButton = document.getElementById('copy-link-button');
-  const movieInfoDiv = document.getElementById('movie-info');
+  const shareButton = document.getElementById("share-button");
+  const copyLinkButton = document.getElementById("copy-link-button");
+  const movieInfoDiv = document.getElementById("movie-info");
 
-  shareButton.addEventListener('click', () => {
-      if (navigator.share) {
-          navigator.share({
-              title: movieInfoDiv.querySelector('h3').innerText,
-              text: 'Confira este filme no FilmFinder!',
-              url: window.location.href
-          }).catch(error => console.log('Error sharing:', error));
-      } else {
-          alert('Compartilhamento não suportado neste navegador.');
-      }
+  shareButton.addEventListener("click", () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: movieInfoDiv.querySelector("h3").innerText,
+          text: "Confira este filme no FilmFinder!",
+          url: window.location.href,
+        })
+        .catch((error) => console.log("Error sharing:", error));
+    } else {
+      alert("Compartilhamento não suportado neste navegador.");
+    }
   });
+
+  copyLinkButton.addEventListener("click", () => {
+    const link = window.location.href;
+    navigator.clipboard
+      .writeText(link)
+      .then(() => {
+        alert("Link copiado para a área de transferência!");
+      })
+      .catch((error) => console.log("Error copying link:", error));
+  });
+}
