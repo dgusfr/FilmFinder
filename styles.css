@@ -394,6 +394,28 @@ nav .menu a:hover {
   display: none;
 }
 
+#share-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#share-button,
+#copy-link-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#share-button:hover,
+#copy-link-button:hover {
+  background-color: #0056b3;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
