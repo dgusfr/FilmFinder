@@ -157,3 +157,20 @@ function loadMovieData(movieId) {
   document.querySelector("main").classList.add("hidden");
   movieDetailsSection.classList.remove("hidden");
 }
+
+function setupSharing() {
+  const shareButton = document.getElementById('share-button');
+  const copyLinkButton = document.getElementById('copy-link-button');
+  const movieInfoDiv = document.getElementById('movie-info');
+
+  shareButton.addEventListener('click', () => {
+      if (navigator.share) {
+          navigator.share({
+              title: movieInfoDiv.querySelector('h3').innerText,
+              text: 'Confira este filme no FilmFinder!',
+              url: window.location.href
+          }).catch(error => console.log('Error sharing:', error));
+      } else {
+          alert('Compartilhamento não suportado neste navegador.');
+      }
+  });
