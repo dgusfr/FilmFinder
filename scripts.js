@@ -189,3 +189,14 @@ function setupSharing() {
       .catch((error) => console.log("Error copying link:", error));
   });
 }
+
+function setupRecommendations() {
+  const recommendedMoviesContainer = document.getElementById('recommended-movies');
+  const recommendationsSection = document.getElementById('recommendations');
+
+  const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+
+  if (favoriteMovies.length === 0) {
+      recommendationsSection.classList.add('hidden');
+      return;
+  }
