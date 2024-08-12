@@ -223,23 +223,29 @@ function setupRecommendations() {
 function getRecommendations(favoriteMovies) {
   // Simulação de lógica de recomendação
   const allMovies = [
-      {
-          imdbID: 'tt0109830',
-          Title: 'Forrest Gump',
-          Poster: 'https://image.tmdb.org/t/p/w500/clolk7rB5lAjs41SD0Vt6IXYLMm.jpg',
-          Genre: 'Drama, Romance'
-      },
-      {
-          imdbID: 'tt0317248',
-          Title: 'City of God',
-          Poster: 'https://image.tmdb.org/t/p/w500/4nWnHqndkzA9USOwa6WN4cjsGMk.jpg',
-          Genre: 'Drama, Crime'
-      },
-      {
-          imdbID: 'tt6751668',
-          Title: 'Parasite',
-          Poster: 'https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg',
-          Genre: 'Drama, Thriller'
-      }
-      // Adicione mais filmes conforme necessário
+    {
+      imdbID: "tt0109830",
+      Title: "Forrest Gump",
+      Poster: "https://image.tmdb.org/t/p/w500/clolk7rB5lAjs41SD0Vt6IXYLMm.jpg",
+      Genre: "Drama, Romance",
+    },
+    {
+      imdbID: "tt0317248",
+      Title: "City of God",
+      Poster: "https://image.tmdb.org/t/p/w500/4nWnHqndkzA9USOwa6WN4cjsGMk.jpg",
+      Genre: "Drama, Crime",
+    },
+    {
+      imdbID: "tt6751668",
+      Title: "Parasite",
+      Poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+      Genre: "Drama, Thriller",
+    },
+    // Adicione mais filmes conforme necessário
   ];
+
+  // Filtrar filmes para evitar recomendar os favoritos novamente
+  return allMovies.filter(
+    (movie) => !favoriteMovies.some((fav) => fav.imdbID === movie.imdbID)
+  );
+}
