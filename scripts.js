@@ -191,26 +191,31 @@ function setupSharing() {
 }
 
 function setupRecommendations() {
-  const recommendedMoviesContainer = document.getElementById('recommended-movies');
-  const recommendationsSection = document.getElementById('recommendations');
+  const recommendedMoviesContainer =
+    document.getElementById("recommended-movies");
+  const recommendationsSection = document.getElementById("recommendations");
 
-  const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+  const favoriteMovies =
+    JSON.parse(localStorage.getItem("favoriteMovies")) || [];
 
   if (favoriteMovies.length === 0) {
-      recommendationsSection.classList.add('hidden');
-      return;
+    recommendationsSection.classList.add("hidden");
+    return;
   }
   const recommendedMovies = getRecommendations(favoriteMovies);
 
-  recommendedMovies.forEach(movie => {
-      const movieElement = document.createElement('div');
-      movieElement.className = 'movie-item';
-      movieElement.innerHTML = `
+  recommendedMovies.forEach((movie) => {
+    const movieElement = document.createElement("div");
+    movieElement.className = "movie-item";
+    movieElement.innerHTML = `
           <img src="${movie.Poster}" alt="${movie.Title}">
           <h3>${movie.Title}</h3>
       `;
-      movieElement.addEventListener('click', () => {
-          loadMovieData(movie.imdbID);
-      });
-      recommendedMoviesContainer.appendChild(movieElement);
+    movieElement.addEventListener("click", () => {
+      loadMovieData(movie.imdbID);
+    });
+    recommendedMoviesContainer.appendChild(movieElement);
   });
+
+  recommendationsSection.classList.remove("hidden");
+}
