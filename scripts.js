@@ -242,7 +242,6 @@ function getRecommendations(favoriteMovies) {
       Poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
       Genre: "Drama, Thriller",
     },
-    // Adicione mais filmes conforme necessário
   ];
 
   // Filtrar filmes para evitar recomendar os favoritos novamente
