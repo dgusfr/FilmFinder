@@ -244,7 +244,6 @@ function getRecommendations(favoriteMovies) {
     },
   ];
 
-  // Filtrar filmes para evitar recomendar os favoritos novamente
   return allMovies.filter(
     (movie) => !favoriteMovies.some((fav) => fav.imdbID === movie.imdbID)
   );
