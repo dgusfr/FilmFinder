@@ -309,3 +309,8 @@ function setupNotifications() {
     }, 3000); // Esconde a notificação após 3 segundos
   });
 }
+
+function showNotification(message) {
+  const event = new CustomEvent("showNotification", { detail: { message } });
+  document.dispatchEvent(event);
+}
