@@ -296,9 +296,16 @@ function loadUserRating(movieId) {
 }
 
 function setupNotifications() {
-  const notification = document.getElementById('notification');
+  const notification = document.getElementById("notification");
 
-  document.addEventListener('showNotification', (e) => {
-      notification.textContent = e.detail.message;
-      notification.classList.remove('hidden');
-      notification.classList.add('show');
+  document.addEventListener("showNotification", (e) => {
+    notification.textContent = e.detail.message;
+    notification.classList.remove("hidden");
+    notification.classList.add("show");
+
+    setTimeout(() => {
+      notification.classList.remove("show");
+      notification.classList.add("hidden");
+    }, 3000); // Esconde a notificação após 3 segundos
+  });
+}
