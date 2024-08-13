@@ -287,3 +287,8 @@ function saveUserRating(rating) {
   ratings[movieId] = rating;
   localStorage.setItem("userRatings", JSON.stringify(ratings));
 }
+
+function loadUserRating(movieId) {
+  const ratings = JSON.parse(localStorage.getItem("userRatings")) || {};
+  return ratings[movieId] || 0;
+}
