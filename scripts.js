@@ -270,3 +270,13 @@ function setupUserRating() {
     });
   });
 }
+
+function updateStarSelection(rating) {
+  const stars = document.querySelectorAll("#stars .star");
+  stars.forEach((star) => {
+    star.classList.remove("selected");
+    if (star.getAttribute("data-value") <= rating) {
+      star.classList.add("selected");
+    }
+  });
+}
