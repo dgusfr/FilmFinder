@@ -315,3 +315,16 @@ function showNotification(message) {
   const event = new CustomEvent("showNotification", { detail: { message } });
   document.dispatchEvent(event);
 }
+
+function toggleFavorite(movieId) {
+  let favorites = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+  if (favorites.includes(movieId)) {
+    favorites = favorites.filter((id) => id !== movieId);
+    showNotification("Filme removido dos favoritos.");
+  } else {
+    favorites.push(movieId);
+    showNotification("Filme adicionado aos favoritos!");
+  }
+  localStorage.setItem("favoriteMovies", JSON.stringify(favorites));
+  updateFavoriteButton(movieId);
+}
