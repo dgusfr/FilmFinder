@@ -248,3 +248,15 @@ function getRecommendations(favoriteMovies) {
     (movie) => !favoriteMovies.some((fav) => fav.imdbID === movie.imdbID)
   );
 }
+function setupUserRating() {
+  const stars = document.querySelectorAll('#stars .star');
+  const ratingMessage = document.getElementById('user-rating-message');
+  let userRating = 0;
+
+  stars.forEach(star => {
+      star.addEventListener('click', () => {
+          userRating = star.getAttribute('data-value');
+          saveUserRating(userRating);
+          updateStarSelection(userRating);
+          ratingMessage.textContent = `Você avaliou este filme com ${userRating} estrelas.`;
+      });
