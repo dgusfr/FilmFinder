@@ -430,6 +430,32 @@ nav .menu a:hover {
   justify-content: center;
 }
 
+#user-rating {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 2em;
+  color: #ccc;
+}
+
+#stars .star {
+  cursor: pointer;
+}
+
+#stars .star.selected {
+  color: #ffcc00;
+}
+
+#user-rating-message {
+  margin-top: 10px;
+  font-style: italic;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
