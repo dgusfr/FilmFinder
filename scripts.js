@@ -294,3 +294,11 @@ function loadUserRating(movieId) {
   const ratings = JSON.parse(localStorage.getItem("userRatings")) || {};
   return ratings[movieId] || 0;
 }
+
+function setupNotifications() {
+  const notification = document.getElementById('notification');
+
+  document.addEventListener('showNotification', (e) => {
+      notification.textContent = e.detail.message;
+      notification.classList.remove('hidden');
+      notification.classList.add('show');
