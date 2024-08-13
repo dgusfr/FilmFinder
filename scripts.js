@@ -280,3 +280,10 @@ function updateStarSelection(rating) {
     }
   });
 }
+
+function saveUserRating(rating) {
+  const movieId = document.querySelector("#movie-info h3").textContent;
+  const ratings = JSON.parse(localStorage.getItem("userRatings")) || {};
+  ratings[movieId] = rating;
+  localStorage.setItem("userRatings", JSON.stringify(ratings));
+}
