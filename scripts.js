@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupRecommendations();
 
   setupUserRating();
+
+  setupNotifications();
 });
 
 function setupGenreFilter() {
