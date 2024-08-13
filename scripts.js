@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupSharing();
 
   setupRecommendations();
+
+  setupUserRating();
 });
 
 function setupGenreFilter() {
