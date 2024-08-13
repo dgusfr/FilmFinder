@@ -249,14 +249,24 @@ function getRecommendations(favoriteMovies) {
   );
 }
 function setupUserRating() {
-  const stars = document.querySelectorAll('#stars .star');
-  const ratingMessage = document.getElementById('user-rating-message');
+  const stars = document.querySelectorAll("#stars .star");
+  const ratingMessage = document.getElementById("user-rating-message");
   let userRating = 0;
 
-  stars.forEach(star => {
-      star.addEventListener('click', () => {
-          userRating = star.getAttribute('data-value');
-          saveUserRating(userRating);
-          updateStarSelection(userRating);
-          ratingMessage.textContent = `Você avaliou este filme com ${userRating} estrelas.`;
-      });
+  stars.forEach((star) => {
+    star.addEventListener("click", () => {
+      userRating = star.getAttribute("data-value");
+      saveUserRating(userRating);
+      updateStarSelection(userRating);
+      ratingMessage.textContent = `Você avaliou este filme com ${userRating} estrelas.`;
+    });
+
+    star.addEventListener("mouseover", () => {
+      updateStarSelection(star.getAttribute("data-value"));
+    });
+
+    star.addEventListener("mouseout", () => {
+      updateStarSelection(userRating);
+    });
+  });
+}
