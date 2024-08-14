@@ -348,3 +348,33 @@ function setupActorSearch() {
           }
       }
   });
+
+
+  function searchByActor(actorName) {
+    actorNameElement.textContent = actorName;
+    actorMoviesContainer.innerHTML = '';
+
+    // Simulação de busca de filmes por ator
+    const movies = [
+        {
+            imdbID: 'tt1375666',
+            Title: 'Inception',
+            Poster: 'https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg',
+            Actors: 'Leonardo DiCaprio'
+        },
+        {
+            imdbID: 'tt0816692',
+            Title: 'Interstellar',
+            Poster: 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+            Actors: 'Matthew McConaughey'
+        },
+        {
+            imdbID: 'tt0111161',
+            Title: 'The Shawshank Redemption',
+            Poster: 'https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg',
+            Actors: 'Morgan Freeman'
+        }
+        // Adicione mais filmes conforme necessário
+    ];
+
+    const actorMovies = movies.filter(movie => movie.Actors.includes(actorName));
