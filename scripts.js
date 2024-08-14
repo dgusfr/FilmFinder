@@ -332,3 +332,19 @@ function toggleFavorite(movieId) {
   localStorage.setItem("favoriteMovies", JSON.stringify(favorites));
   updateFavoriteButton(movieId);
 }
+
+
+function setupActorSearch() {
+  const searchInput = document.getElementById('search-input');
+  const actorMoviesContainer = document.getElementById('actor-movies');
+  const actorSearchSection = document.getElementById('actor-search');
+  const actorNameElement = document.getElementById('actor-name');
+
+  searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+          const query = searchInput.value.trim();
+          if (query) {
+              searchByActor(query);
+          }
+      }
+  });
