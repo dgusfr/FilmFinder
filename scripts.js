@@ -375,7 +375,6 @@ function setupActorSearch() {
           "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
         Actors: "Morgan Freeman",
       },
-      // Adicione mais filmes conforme necessário
     ];
 
     const actorMovies = movies.filter((movie) =>
