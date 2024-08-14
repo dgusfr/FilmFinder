@@ -351,8 +351,6 @@ function setupActorSearch() {
   function searchByActor(actorName) {
     actorNameElement.textContent = actorName;
     actorMoviesContainer.innerHTML = "";
-
-    // Simulação de busca de filmes por ator
     const movies = [
       {
         imdbID: "tt1375666",
