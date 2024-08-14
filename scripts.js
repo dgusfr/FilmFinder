@@ -311,7 +311,7 @@ function setupNotifications() {
     setTimeout(() => {
       notification.classList.remove("show");
       notification.classList.add("hidden");
-    }, 3000); // Esconde a notificação após 3 segundos
+    }, 3000);
   });
 }
 
