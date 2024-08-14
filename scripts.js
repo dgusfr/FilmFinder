@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupUserRating();
 
   setupNotifications();
+
+  setupActorSearch();
 });
 
 function setupGenreFilter() {
