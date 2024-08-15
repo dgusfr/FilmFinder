@@ -18,7 +18,7 @@ O **FilmFinder** é um projeto em desenvolvimento que visa clonar a página de d
 ## Funcionalidades
 
 Barra de navegação com logo e menu
-- [x] Barra de pesquisa funcional (placeholder)
+Barra de pesquisa funcional (placeholder)
 - [x] Estrutura básica da página de detalhes do filme
 - [x] Integração com API de filmes
 - [X] Responsividade completa
