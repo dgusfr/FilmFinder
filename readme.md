@@ -21,7 +21,7 @@ Barra de navegação com logo e menu
 Barra de pesquisa funcional (placeholder)
 Estrutura básica da página de detalhes do filme
 Integração com API de filmes
-- [X] Responsividade completa
+Responsividade completa
 - [X] Melhorias visuais e interatividade
 
 ## Estrutura do Projeto
