@@ -22,7 +22,7 @@ Barra de pesquisa funcional (placeholder)
 Estrutura básica da página de detalhes do filme
 Integração com API de filmes
 Responsividade completa
-- [X] Melhorias visuais e interatividade
+Melhorias visuais e interatividade
 
 ## Estrutura do Projeto
 
