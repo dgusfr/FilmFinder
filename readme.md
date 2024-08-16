@@ -11,7 +11,7 @@ O **FilmFinder** é um projeto em desenvolvimento que visa clonar a página de d
 ## Tecnologias Utilizadas
 
 - HTML
-- CSS3
+- CSS
 - JavaScript 
 - [OMDb API](http://www.omdbapi.com/) 
 
