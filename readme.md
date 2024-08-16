@@ -53,6 +53,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou env
 Este projeto está licenciado sob a MIT License.
 Abra o index.html no seu navegador preferido para visualizar o projeto.
 
-## Autor
 
-Desenvolvido por Diego Franco.
