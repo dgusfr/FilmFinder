@@ -49,5 +49,9 @@ Navegue até o diretório do projeto:
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 
+## Licença
+
+Este projeto está licenciado sob a MIT License.
+Abra o index.html no seu navegador preferido para visualizar o projeto.
 
 
