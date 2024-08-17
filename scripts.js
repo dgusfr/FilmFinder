@@ -400,18 +400,36 @@ function setupActorSearch() {
   }
 }
 
-
 function setupMovieComparison() {
-  const comparisonContainer = document.getElementById('comparison-container');
-  const comparisonSection = document.getElementById('movie-comparison');
+  const comparisonContainer = document.getElementById("comparison-container");
+  const comparisonSection = document.getElementById("movie-comparison");
   let selectedMovies = [];
 
-  document.addEventListener('selectMovieForComparison', (e) => {
+  document.addEventListener("selectMovieForComparison", (e) => {
     const movieData = e.detail.movieData;
     if (selectedMovies.length < 2) {
-        selectedMovies.push(movieData);
-        updateComparisonUI();
+      selectedMovies.push(movieData);
+      updateComparisonUI();
     } else {
-        showNotification('Você só pode comparar dois filmes por vez.');
+      showNotification("Você só pode comparar dois filmes por vez.");
     }
-});
+  });
+
+  function updateComparisonUI() {
+    if (selectedMovies.length === 2) {
+      selectedMovies.forEach((movie, index) => {
+        const movieContainer = comparisonContainer.querySelector(
+          `#movie-${index + 1}`
+        );
+        movieContainer.innerHTML = `
+              <h3>${movie.Title}</h3>
+              <img src="${movie.Poster}" alt="${movie.Title}">
+              <p><strong>Avaliação:</strong> ${movie.imdbRating}</p>
+              <p><strong>Gênero:</strong> ${movie.Genre}</p>
+              <p><strong>Duração:</strong> ${movie.Runtime}</p>
+          `;
+      });
+      comparisonSection.classList.remove("hidden");
+    }
+  }
+}
