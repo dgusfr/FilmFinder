@@ -399,3 +399,9 @@ function setupActorSearch() {
     }
   }
 }
+
+
+function setupMovieComparison() {
+  const comparisonContainer = document.getElementById('comparison-container');
+  const comparisonSection = document.getElementById('movie-comparison');
+  let selectedMovies = [];
