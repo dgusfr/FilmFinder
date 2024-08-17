@@ -10,19 +10,19 @@ O **FilmFinder** é um projeto em desenvolvimento que visa clonar a página de d
 
 ## Tecnologias Utilizadas
 
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- [OMDb API](http://www.omdbapi.com/) (para futuras integrações)
+- HTML
+- CSS
+- JavaScript 
+- [OMDb API](http://www.omdbapi.com/) 
 
 ## Funcionalidades
 
-- [x] Barra de navegação com logo e menu
-- [x] Barra de pesquisa funcional (placeholder)
-- [x] Estrutura básica da página de detalhes do filme
-- [ ] Integração com API de filmes
-- [ ] Responsividade completa
-- [ ] Melhorias visuais e interatividade
+Barra de navegação com logo e menu
+Barra de pesquisa funcional 
+Estrutura básica da página de detalhes do filme
+Integração com API de filmes
+Responsividade completa
+Melhorias visuais e interatividade
 
 ## Estrutura do Projeto
 
@@ -51,8 +51,9 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou env
 ## Licença
 
 Este projeto está licenciado sob a MIT License.
-Abra o index.html no seu navegador preferido para visualizar o projeto.
 
 ## Autor
 
-Desenvolvido por Diego.
+Desenvolvido por Diego Franco.
+
+
