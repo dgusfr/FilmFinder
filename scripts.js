@@ -433,3 +433,10 @@ function setupMovieComparison() {
     }
   }
 }
+
+function loadMovieData(imdbID) {
+  fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=YOUR_API_KEY`)
+      .then(response => response.json())
+      .then(data => {
+          console.log(data);
+          showMovieDetails(data);
