@@ -44,8 +44,6 @@ Navegue até o diretório do projeto:
 
 `cd FilmFinder`
 
-
-
 ## Licença
 
 Este projeto está licenciado sob a MIT License.
