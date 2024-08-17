@@ -436,7 +436,15 @@ function setupMovieComparison() {
 
 function loadMovieData(imdbID) {
   fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=YOUR_API_KEY`)
-      .then(response => response.json())
-      .then(data => {
-          console.log(data);
-          showMovieDetails(data);
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      showMovieDetails(data);
+      // Disparar evento para selecionar filme para comparação
+      const event = new CustomEvent("selectMovieForComparison", {
+        detail: { movieData: data },
+      });
+      document.dispatchEvent(event);
+    })
+    .catch((error) => console.error("Error loading movie data:", error));
+}
