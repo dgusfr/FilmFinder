@@ -405,3 +405,13 @@ function setupMovieComparison() {
   const comparisonContainer = document.getElementById('comparison-container');
   const comparisonSection = document.getElementById('movie-comparison');
   let selectedMovies = [];
+
+  document.addEventListener('selectMovieForComparison', (e) => {
+    const movieData = e.detail.movieData;
+    if (selectedMovies.length < 2) {
+        selectedMovies.push(movieData);
+        updateComparisonUI();
+    } else {
+        showNotification('Você só pode comparar dois filmes por vez.');
+    }
+});
