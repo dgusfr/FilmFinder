@@ -44,9 +44,7 @@ Navegue até o diretório do projeto:
 
 `cd FilmFinder`
 
-## Contribuições
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 ## Licença
 
