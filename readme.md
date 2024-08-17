@@ -26,7 +26,7 @@ Melhorias visuais e interatividade
 
 ## Estrutura do Projeto
 
-```plaintext
+```
 FilmFinder/
 ├── index.html
 ├── styles.css
