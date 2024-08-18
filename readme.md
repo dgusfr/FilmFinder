@@ -22,7 +22,7 @@ Barra de pesquisa funcional
 Estrutura básica da página de detalhes do filme
 Integração com API de filmes
 Responsividade completa
-Melhorias visuais e interatividade
+Melhorias visuais 
 
 ## Estrutura do Projeto
 
