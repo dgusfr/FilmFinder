@@ -50,6 +50,6 @@ Este projeto está licenciado sob a MIT License.
 
 ## Autor
 
-Desenvolvido por Diego 
+Desenvolvido por Diego Franco.
 
 
