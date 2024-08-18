@@ -40,7 +40,7 @@ Clone o repositório
 
 `git clone https://github.com/seu-usuario/FilmFinder.git`
 
-Navegue até o diretório do projeto:
+Navegue até o diretório do projeto
 
 `cd FilmFinder`
 
