@@ -36,7 +36,7 @@ FilmFinder/
 
 ## Como Usar
 
-Clone o repositório:
+Clone o repositório
 
 `git clone https://github.com/seu-usuario/FilmFinder.git`
 
