@@ -461,23 +461,40 @@ function loadMovieData(imdbID) {
 }
 
 function setupWatchLater() {
-  const watchLaterButton = document.getElementById('watch-later-button');
+  const watchLaterButton = document.getElementById("watch-later-button");
 
-  watchLaterButton.addEventListener('click', () => {
-      const movieId = document.querySelector('.movie-details').getAttribute('data-imdb-id');
-      const movieTitle = document.querySelector('.movie-details h2').textContent;
-      saveToWatchLater(movieId, movieTitle);
-      showNotification(`"${movieTitle}" adicionado à sua lista de "Assistir mais tarde".`);
+  watchLaterButton.addEventListener("click", () => {
+    const movieId = document
+      .querySelector(".movie-details")
+      .getAttribute("data-imdb-id");
+    const movieTitle = document.querySelector(".movie-details h2").textContent;
+    saveToWatchLater(movieId, movieTitle);
+    showNotification(
+      `"${movieTitle}" adicionado à sua lista de "Assistir mais tarde".`
+    );
   });
 
   function saveToWatchLater(movieId, movieTitle) {
-    let watchLaterList = JSON.parse(localStorage.getItem('watchLaterList')) || [];
+    let watchLaterList =
+      JSON.parse(localStorage.getItem("watchLaterList")) || [];
     const movie = { id: movieId, title: movieTitle };
 
-    if (!watchLaterList.some(item => item.id === movieId)) {
-        watchLaterList.push(movie);
-        localStorage.setItem('watchLaterList', JSON.stringify(watchLaterList));
+    if (!watchLaterList.some((item) => item.id === movieId)) {
+      watchLaterList.push(movie);
+      localStorage.setItem("watchLaterList", JSON.stringify(watchLaterList));
     } else {
-        showNotification(`"${movieTitle}" já está na sua lista de "Assistir mais tarde".`);
+      showNotification(
+        `"${movieTitle}" já está na sua lista de "Assistir mais tarde".`
+      );
     }
+  }
+
+  function loadWatchLaterList() {
+    const watchLaterList =
+      JSON.parse(localStorage.getItem("watchLaterList")) || [];
+    // Aqui você pode adicionar a lógica para exibir a lista de filmes "Assistir mais tarde" em algum lugar da página
+  }
+
+  // Chamar loadWatchLaterList em algum lugar apropriado para carregar e exibir a lista
+  loadWatchLaterList();
 }
