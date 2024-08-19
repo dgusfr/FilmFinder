@@ -525,6 +525,27 @@ nav .menu a:hover {
   margin-bottom: 15px;
 }
 
+#user-rating {
+  margin-top: 20px;
+}
+
+#star-rating {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.star {
+  font-size: 2rem;
+  color: #ddd;
+}
+
+.star.selected,
+.star:hover,
+.star:hover ~ .star {
+  color: #ffbf00;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
