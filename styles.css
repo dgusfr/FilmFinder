@@ -546,6 +546,22 @@ nav .menu a:hover {
   color: #ffbf00;
 }
 
+/* Adicionar ao CSS existente */
+#watch-later-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#watch-later-button:hover {
+  background-color: #ff856c;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav {
