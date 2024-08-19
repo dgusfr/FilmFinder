@@ -459,3 +459,13 @@ function loadMovieData(imdbID) {
     })
     .catch((error) => console.error("Error loading movie data:", error));
 }
+
+function setupWatchLater() {
+  const watchLaterButton = document.getElementById('watch-later-button');
+
+  watchLaterButton.addEventListener('click', () => {
+      const movieId = document.querySelector('.movie-details').getAttribute('data-imdb-id');
+      const movieTitle = document.querySelector('.movie-details h2').textContent;
+      saveToWatchLater(movieId, movieTitle);
+      showNotification(`"${movieTitle}" adicionado à sua lista de "Assistir mais tarde".`);
+  });
