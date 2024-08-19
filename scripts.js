@@ -3,37 +3,65 @@ let currentPage = 1;
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Document is fully loaded");
 
+  // Função para manipulação do carrossel
   setupCarousel();
 
+  // Função para manipulação da barra de pesquisa
   setupSearch();
 
+  // Função para manipulação de interações (hover effects, etc.)
   setupInteractions();
 
-  loadMovieData("tt0111161");
+  // Carregar dados do filme
+  loadMovieData("tt0111161"); // Exemplo de ID de filme
 
+  // Carregar filmes populares
   loadPopularMovies();
 
+  // Configurar favoritos
   setupFavorites();
 
+  // Configurar paginação
   setupPagination();
 
+  // Carregar e exibir favoritos
   displayFavorites();
 
+  // Configurar filtro por gênero
   setupGenreFilter();
 
+  // Configurar botão de "Ver Mais"
   setupLoadMoreButton();
 
+  // Configurar navegação detalhada do filme
   setupMovieDetails();
 
+  // Configurar compartilhamento
   setupSharing();
 
+  // Configurar recomendações
   setupRecommendations();
 
+  // Configurar avaliações dos usuários
   setupUserRating();
 
+  // Configurar notificações de feedback
   setupNotifications();
 
+  // Configurar pesquisa por ator
   setupActorSearch();
+
+  // Configurar comparação de filmes
+  setupMovieComparison();
+
+  // Configurar histórico de pesquisa
+  setupSearchHistory();
+
+  // Configurar avaliação dos usuários
+  setupUserRating();
+
+  // Configurar "Assistir mais tarde"
+  setupWatchLater();
 });
 
 function setupGenreFilter() {
