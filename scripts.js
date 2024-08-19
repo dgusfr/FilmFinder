@@ -276,6 +276,17 @@ function setupUserRating() {
       highlightStars(selectedRating);
   });
 });
+
+function highlightStars(rating) {
+  stars.forEach(star => {
+      if (star.getAttribute('data-value') <= rating) {
+          star.classList.add('selected');
+      } else {
+          star.classList.remove('selected');
+      }
+  });
+}
+
 function updateStarSelection(rating) {
   const stars = document.querySelectorAll("#stars .star");
   stars.forEach((star) => {
