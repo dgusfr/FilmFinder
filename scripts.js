@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Configurar compartilhamento
   setupSharing();
 
-  // Configurar recomendações
   setupRecommendations();
 
   // Configurar avaliações dos usuários
