@@ -469,3 +469,15 @@ function setupWatchLater() {
       saveToWatchLater(movieId, movieTitle);
       showNotification(`"${movieTitle}" adicionado à sua lista de "Assistir mais tarde".`);
   });
+
+  function saveToWatchLater(movieId, movieTitle) {
+    let watchLaterList = JSON.parse(localStorage.getItem('watchLaterList')) || [];
+    const movie = { id: movieId, title: movieTitle };
+
+    if (!watchLaterList.some(item => item.id === movieId)) {
+        watchLaterList.push(movie);
+        localStorage.setItem('watchLaterList', JSON.stringify(watchLaterList));
+    } else {
+        showNotification(`"${movieTitle}" já está na sua lista de "Assistir mais tarde".`);
+    }
+}
