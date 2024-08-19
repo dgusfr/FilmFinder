@@ -268,16 +268,14 @@ function setupUserRating() {
       );
     });
 
-    star.addEventListener("mouseover", () => {
-      updateStarSelection(star.getAttribute("data-value"));
-    });
-
-    star.addEventListener("mouseout", () => {
-      updateStarSelection(userRating);
-    });
+    star.addEventListener('mouseover', () => {
+      highlightStars(star.getAttribute('data-value'));
   });
-}
 
+  star.addEventListener('mouseout', () => {
+      highlightStars(selectedRating);
+  });
+});
 function updateStarSelection(rating) {
   const stars = document.querySelectorAll("#stars .star");
   stars.forEach((star) => {
