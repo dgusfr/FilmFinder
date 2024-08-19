@@ -298,11 +298,10 @@ function updateStarSelection(rating) {
 }
 
 function saveUserRating(rating) {
-  const movieId = document.querySelector("#movie-info h3").textContent;
-  const ratings = JSON.parse(localStorage.getItem("userRatings")) || {};
+  const movieId = document.querySelector('.movie-details').getAttribute('data-imdb-id');
+  let ratings = JSON.parse(localStorage.getItem('userRatings')) || {};
   ratings[movieId] = rating;
-  localStorage.setItem("userRatings", JSON.stringify(ratings));
-  showNotification("Sua avaliação foi salva!");
+  localStorage.setItem('userRatings', JSON.stringify(ratings));
 }
 
 function loadUserRating(movieId) {
