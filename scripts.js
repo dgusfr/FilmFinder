@@ -268,49 +268,47 @@ function setupUserRating() {
       );
     });
 
-    star.addEventListener('mouseover', () => {
-      highlightStars(star.getAttribute('data-value'));
-  });
+    star.addEventListener("mouseover", () => {
+      highlightStars(star.getAttribute("data-value"));
+    });
 
-  star.addEventListener('mouseout', () => {
+    star.addEventListener("mouseout", () => {
       highlightStars(selectedRating);
+    });
   });
-});
 
-function highlightStars(rating) {
-  stars.forEach(star => {
-      if (star.getAttribute('data-value') <= rating) {
-          star.classList.add('selected');
+  function highlightStars(rating) {
+    stars.forEach((star) => {
+      if (star.getAttribute("data-value") <= rating) {
+        star.classList.add("selected");
       } else {
-          star.classList.remove('selected');
+        star.classList.remove("selected");
       }
-  });
-}
+    });
+  }
 
-function updateStarSelection(rating) {
-  const stars = document.querySelectorAll("#stars .star");
-  stars.forEach((star) => {
-    star.classList.remove("selected");
-    if (star.getAttribute("data-value") <= rating) {
-      star.classList.add("selected");
-    }
-  });
-}
+  function saveUserRating(rating) {
+    const movieId = document
+      .querySelector(".movie-details")
+      .getAttribute("data-imdb-id");
+    let ratings = JSON.parse(localStorage.getItem("userRatings")) || {};
+    ratings[movieId] = rating;
+    localStorage.setItem("userRatings", JSON.stringify(ratings));
+  }
 
-function saveUserRating(rating) {
-  const movieId = document.querySelector('.movie-details').getAttribute('data-imdb-id');
-  let ratings = JSON.parse(localStorage.getItem('userRatings')) || {};
-  ratings[movieId] = rating;
-  localStorage.setItem('userRatings', JSON.stringify(ratings));
-}
-
-function loadUserRating() {
-  const movieId = document.querySelector('.movie-details').getAttribute('data-imdb-id');
-  const ratings = JSON.parse(localStorage.getItem('userRatings')) || {};
-  if (ratings[movieId]) {
+  function loadUserRating() {
+    const movieId = document
+      .querySelector(".movie-details")
+      .getAttribute("data-imdb-id");
+    const ratings = JSON.parse(localStorage.getItem("userRatings")) || {};
+    if (ratings[movieId]) {
       selectedRating = ratings[movieId];
       highlightStars(selectedRating);
+    }
   }
+
+  // Carregar avaliação ao exibir detalhes do filme
+  loadUserRating();
 }
 
 function setupNotifications() {
