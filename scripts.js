@@ -255,16 +255,17 @@ function getRecommendations(favoriteMovies) {
   );
 }
 function setupUserRating() {
-  const stars = document.querySelectorAll("#stars .star");
-  const ratingMessage = document.getElementById("user-rating-message");
-  let userRating = 0;
+  const stars = document.querySelectorAll("#star-rating .star");
+  let selectedRating = 0;
 
   stars.forEach((star) => {
     star.addEventListener("click", () => {
-      userRating = star.getAttribute("data-value");
-      saveUserRating(userRating);
-      updateStarSelection(userRating);
-      ratingMessage.textContent = `Você avaliou este filme com ${userRating} estrelas.`;
+      selectedRating = star.getAttribute("data-value");
+      saveUserRating(selectedRating);
+      highlightStars(selectedRating);
+      showNotification(
+        `Você avaliou este filme com ${selectedRating} estrelas.`
+      );
     });
 
     star.addEventListener("mouseover", () => {
