@@ -304,9 +304,13 @@ function saveUserRating(rating) {
   localStorage.setItem('userRatings', JSON.stringify(ratings));
 }
 
-function loadUserRating(movieId) {
-  const ratings = JSON.parse(localStorage.getItem("userRatings")) || {};
-  return ratings[movieId] || 0;
+function loadUserRating() {
+  const movieId = document.querySelector('.movie-details').getAttribute('data-imdb-id');
+  const ratings = JSON.parse(localStorage.getItem('userRatings')) || {};
+  if (ratings[movieId]) {
+      selectedRating = ratings[movieId];
+      highlightStars(selectedRating);
+  }
 }
 
 function setupNotifications() {
