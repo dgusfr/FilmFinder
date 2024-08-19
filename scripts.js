@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupRecommendations();
 
-  // Configurar avaliações dos usuários
   setupUserRating();
 
   // Configurar notificações de feedback
