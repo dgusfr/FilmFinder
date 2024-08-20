@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FilmFinder - A sua plataforma para encontrar, avaliar e salvar seus filmes favoritos.">
+  <meta name="keywords" content="Filmes, Avaliação, Favoritos, Assistir Mais Tarde">
+  <meta name="author" content="Diego">
   <title>FilmFinder</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,49 +14,33 @@
 <body>
   <header>
     <h1>FilmFinder</h1>
-    <div id="search-bar">
-      <input type="text" id="search-input" placeholder="Buscar filmes...">
-      <button id="search-button">Buscar</button>
-    </div>
-    <!-- Adicionar dentro da seção de detalhes do filme, ao lado de favoritos -->
-    <button id="watch-later-button" class="btn">Assistir mais tarde</button>
-    <div id="loader" class="hidden">Carregando...</div>
-
+    <nav>
+      <input type="text" id="search-bar" placeholder="Buscar filmes...">
+      <button id="search-button" class="btn">Buscar</button>
+    </nav>
   </header>
 
   <main>
-    <section id="carousel">
-      <button id="prev-button" class="carousel-button">&lt;</button>
-      <div id="carousel-items">
-      </div>
-      <button id="next-button" class="carousel-button">&gt;</button>
-    </section>
-
-    <div id="genre-filter">
-      <label for="genres">Filtrar por Gênero:</label>
-      <select id="genres">
-        <option value="all">Todos</option>
-        <option value="action">Ação</option>
-        <option value="comedy">Comédia</option>
-        <option value="drama">Drama</option>
-        <option value="fantasy">Fantasia</option>
-        <option value="horror">Terror</option>
-      </select>
-    </div>
-
-    <section id="popular-movies">
+    <section id="movie-carousel">
       <h2>Filmes Populares</h2>
-      <button id="load-more-button">Ver Mais</button>
+      <div id="carousel-container">
+        <button id="prev-button" class="carousel-nav">&lt;</button>
+        <div id="carousel">
+          <!-- Filmes populares serão inseridos aqui -->
+        </div>
+        <button id="next-button" class="carousel-nav">&gt;</button>
+      </div>
     </section>
 
     <section id="movie-details" class="hidden">
-      <h2>Detalhes do Filme</h2>
-      <div id="movie-info">
-        <!-- Detalhes do filme serão carregados aqui -->
+      <div id="loader" class="hidden">Carregando...</div>
+      <h2>Título do Filme</h2>
+      <img id="movie-poster" src="" alt="Poster do Filme">
+      <p id="movie-description">Descrição do filme...</p>
+      <div class="actions">
+        <button id="favorite-button" class="btn">Favorito</button>
+        <button id="watch-later-button" class="btn">Assistir mais tarde</button>
       </div>
-      <button id="back-button">Voltar</button>
-
-      <!-- Adicionar dentro da seção de detalhes do filme -->
       <div id="user-rating">
         <h3>Avalie este filme:</h3>
         <div id="star-rating">
@@ -64,56 +51,46 @@
           <span class="star" data-value="5">☆</span>
         </div>
       </div>
-
-    </section>
-
-    <section id="favorites">
-      <h2>Favoritos</h2>
-      <div id="favorite-movies">
+      <div id="share-section">
+        <h3>Compartilhar</h3>
+        <button id="share-button" class="btn">Compartilhar este filme</button>
       </div>
-    </section>
-    <div id="share-section">
-      <button id="share-button">Compartilhar</button>
-      <button id="copy-link-button">Copiar Link</button>
-    </div>
-
-    <section id="recommendations" class="hidden">
-      <h2>Recomendações para Você</h2>
-      <div id="recommended-movies" class="movie-list">
-        <!-- Filmes recomendados serão carregados aqui -->
+      <div id="recommendations">
+        <h3>Recomendações</h3>
+        <div id="recommended-movies">
+          <!-- Recomendações serão inseridas aqui -->
+        </div>
       </div>
     </section>
 
-    <div id="user-rating">
-      <h3>Avalie este Filme</h3>
-      <div id="stars">
-        <span class="star" data-value="1">&#9733;</span>
-        <span class="star" data-value="2">&#9733;</span>
-        <span class="star" data-value="3">&#9733;</span>
-        <span class="star" data-value="4">&#9733;</span>
-        <span class="star" data-value="5">&#9733;</span>
+    <section id="favorites-list">
+      <h2>Meus Favoritos</h2>
+      <div id="favorites-container">
+        <!-- Filmes favoritos serão inseridos aqui -->
       </div>
-      <p id="user-rating-message"></p>
-    </div>
+    </section>
 
-    <div id="notification" class="hidden"></div>
+    <section id="watch-later-list">
+      <h2>Assistir Mais Tarde</h2>
+      <div id="watch-later-container">
+        <!-- Filmes para assistir mais tarde serão inseridos aqui -->
+      </div>
+    </section>
+
+    <section id="search-history">
+      <h2>Histórico de Pesquisa</h2>
+      <ul id="history-list">
+        <!-- Histórico de pesquisa será inserido aqui -->
+      </ul>
+    </section>
+
+    <section id="movie-comparison">
+      <h2>Comparação de Filmes</h2>
+      <div id="comparison-container">
+        <!-- Comparação de filmes será exibida aqui -->
+      </div>
+    </section>
   </main>
-  <section id="actor-search" class="hidden">
-    <h2>Filmes com <span id="actor-name"></span></h2>
-    <div id="actor-movies" class="movie-list">
-      <!-- Filmes relacionados ao ator serão carregados aqui -->
-    </div>
-  </section>
-
-  <section id="movie-comparison" class="hidden">
-    <h2>Comparação de Filmes</h2>
-    <div id="comparison-container">
-      <div id="movie-1" class="comparison-movie"></div>
-      <div id="movie-2" class="comparison-movie"></div>
-    </div>
-  </section>
-
-  <div id="notification" class="notification"></div>
 
   <footer>
     <p>&copy; 2024 FilmFinder. Todos os direitos reservados.</p>
