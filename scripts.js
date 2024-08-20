@@ -333,7 +333,6 @@ function setupUserRating() {
     }
   }
 
-  // Carregar avaliação ao exibir detalhes do filme
   loadUserRating();
 }
 
@@ -477,7 +476,6 @@ function loadMovieData(imdbID) {
     .then((data) => {
       console.log(data);
       showMovieDetails(data);
-
       const event = new CustomEvent("selectMovieForComparison", {
         detail: { movieData: data },
       });
