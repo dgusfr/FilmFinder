@@ -1,55 +1,26 @@
 # FilmFinder
 
-### Descrição
+## Descrição
 
-O **FilmFinder** é um projeto em desenvolvimento que visa clonar a página de detalhes de filmes do IMDb. Este projeto é ideal para praticar habilidades front-end, incluindo HTML, CSS e JavaScript, além de integrar APIs para dados dinâmicos.
-
-## Status
-
-![Em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge)
-
-## Tecnologias Utilizadas
-
-- HTML
-- CSS
-- JavaScript 
-- [OMDb API](http://www.omdbapi.com/) 
+FilmFinder é uma aplicação web que permite aos usuários buscar informações sobre filmes, salvar favoritos, adicionar filmes à lista de "Assistir mais tarde", e muito mais.
 
 ## Funcionalidades
 
-Barra de navegação com logo e menu
-Barra de pesquisa funcional 
-Estrutura básica da página de detalhes do filme
-Integração com API de filmes
-Responsividade completa
-Melhorias visuais 
+- **Busca de Filmes**: Encontre informações detalhadas sobre filmes.
+- **Favoritos**: Adicione e gerencie sua lista de filmes favoritos.
+- **Assistir Mais Tarde**: Salve filmes para assistir posteriormente.
+- **Avaliação de Filmes**: Avalie filmes com uma nota de 1 a 5 estrelas.
+- **Histórico de Pesquisa**: Acesse rapidamente suas pesquisas anteriores.
 
-## Estrutura do Projeto
+## Tecnologias Utilizadas
 
-```
-FilmFinder/
-├── index.html
-├── styles.css
-├── scripts.js
-├── README.md
-```
+- HTML5
+- CSS3
+- JavaScript
 
-## Como Usar
+## Como Executar o Projeto
 
-Clone o repositório
-
-`git clone https://github.com/seu-usuario/FilmFinder.git`
-
-Navegue até o diretório do projeto
-
-`cd FilmFinder`
-
-## Licença
-
-Este projeto está licenciado sob a MIT License.
-
-## Autor
-
-Desenvolvido por Diego Franco.
-
-
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/seu-usuario/filmfinder.git
+   ```
