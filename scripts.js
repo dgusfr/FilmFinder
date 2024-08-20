@@ -521,7 +521,6 @@ function setupWatchLater() {
     // Aqui você pode adicionar a lógica para exibir a lista de filmes "Assistir mais tarde" em algum lugar da página
   }
 
-  // Chamar loadWatchLaterList em algum lugar apropriado para carregar e exibir a lista
   loadWatchLaterList();
 }
 
