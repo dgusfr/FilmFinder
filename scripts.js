@@ -530,8 +530,6 @@ function loadMovieData(movieId) {
   loader.classList.remove("hidden");
 
   setTimeout(() => {
-    // Função original para carregar dados do filme aqui
-
     loader.classList.add("hidden");
   }, 2000); // Substitua pelo tempo real de carregamento de dados
 }
