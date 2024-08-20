@@ -518,7 +518,6 @@ function setupWatchLater() {
   function loadWatchLaterList() {
     const watchLaterList =
       JSON.parse(localStorage.getItem("watchLaterList")) || [];
-    // Aqui você pode adicionar a lógica para exibir a lista de filmes "Assistir mais tarde" em algum lugar da página
   }
 
   loadWatchLaterList();
