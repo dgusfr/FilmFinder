@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadPopularMovies();
 
-  // Configurar favoritos
   setupFavorites();
 
   // Configurar paginação
