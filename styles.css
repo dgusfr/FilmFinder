@@ -1,555 +1,142 @@
-/* styles.css */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-  transition: background-color 0.3s ease;
+}
+
+/* Estilos do Header */
+header {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 nav {
-  background-color: #333;
-  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#search-bar {
+  width: 60%;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
 }
 
-nav .logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav .search-bar {
-  display: flex;
-  align-items: center;
-}
-
-nav .search-bar input {
-  padding: 5px;
-  font-size: 1em;
+#search-button {
+  padding: 10px 20px;
+  font-size: 1rem;
   border: none;
-  border-radius: 4px;
-  margin-right: 5px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-nav .search-bar button {
-  padding: 5px 10px;
-  font-size: 1em;
-  border: none;
-  border-radius: 4px;
-  background-color: #555;
+  border-radius: 5px;
+  background-color: #ff6f61;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-nav .search-bar button:hover {
-  background-color: #666;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+#search-button:hover {
+  background-color: #ff856c;
 }
 
-nav .menu a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s ease;
-}
-
-nav .menu a:hover {
-  text-decoration: underline;
-  color: #ddd;
-}
-
-.carousel-container {
-  position: relative;
+/* Seção de Filmes Populares (Carrossel) */
+#movie-carousel {
   padding: 20px;
-  background-color: white;
-  margin: 20px auto;
-  max-width: 1200px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
+  text-align: center;
 }
 
-.carousel {
+#carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#carousel {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+  width: 80%;
+  margin: 20px 0;
 }
 
 .carousel-item {
-  display: inline-block;
-  width: 200px;
-  margin-right: 10px;
+  min-width: 200px;
+  margin: 0 10px;
 }
 
 .carousel-item img {
   width: 100%;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
 }
 
-.carousel-item img:hover {
-  transform: scale(1.05);
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+.carousel-nav {
+  background-color: #ff6f61;
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
-  font-size: 1.5em;
-}
-
-#prev-btn {
-  left: 10px;
-}
-
-#next-btn {
-  right: 10px;
-}
-
-.search-results {
-  padding: 20px;
-  background-color: white;
-  margin: 20px auto;
-  max-width: 1200px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: box-shadow 0.3s ease;
-}
-
-.search-results .result {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.search-results .result img {
-  width: 50px;
-  height: 75px;
-  margin-right: 20px;
-}
-
-.search-results .result h3 {
-  margin: 0;
-}
-
-.movie-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  background-color: white;
-  margin: 20px auto;
-  max-width: 1200px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: box-shadow 0.3s ease;
-}
-
-.poster img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.poster img:hover {
-  transform: scale(1.05);
-}
-
-.details {
-  flex: 1;
-  margin-left: 20px;
-  min-width: 300px;
-  transition: transform 0.3s ease;
-}
-
-.details h1 {
-  margin-top: 0;
-  font-size: 2em;
-  color: #444;
-  transition: color 0.3s ease;
-}
-
-.details h2 {
-  margin-bottom: 5px;
-  font-size: 1.5em;
-  color: #444;
-  transition: color 0.3s ease;
-}
-
-.details p,
-.details ul {
-  margin: 5px 0;
-  font-size: 1.1em;
-  line-height: 1.5em;
-  transition: color 0.3s ease;
-}
-
-.details ul {
-  padding-left: 20px;
-}
-
-.details ul li {
-  margin-bottom: 5px;
-}
-
-.details iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 8px;
-  transition: box-shadow 0.3s ease;
-}
-
-.details iframe:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.favorite-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.favorite-btn.favorited {
-  color: red;
-}
-
-.favorites-section {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-}
-
-.favorites-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.favorite-item {
-  width: 150px;
-  text-align: center;
-}
-
-.favorite-item img {
-  width: 100%;
-  height: auto;
   border-radius: 5px;
+  font-size: 1.5rem;
 }
 
-/* Adicionar ao CSS existente */
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+.carousel-nav:hover {
+  background-color: #ff856c;
 }
 
-.page-btn {
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.page-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-#pageIndicator {
-  font-size: 16px;
-}
-
-.remove-favorite {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.remove-favorite:hover {
-  background-color: #ff1a1a;
-}
-
-.notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #323232;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 1000;
-}
-
-.notification.show {
-  opacity: 1;
-}
-
-#genre-filter {
-  margin: 20px 0;
-  text-align: center;
-}
-
-#genre-filter label {
-  margin-right: 10px;
-  font-weight: bold;
-  color: #fff;
-}
-
-#genres {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #2c2c2c;
-  color: #fff;
-}
-
-#load-more-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#load-more-button:hover {
-  background-color: #45a049;
-}
-
+/* Seção de Detalhes do Filme */
 #movie-details {
+  padding: 20px;
+  background-color: white;
   margin: 20px;
-  padding: 20px;
-  background-color: #1e1e1e;
   border-radius: 10px;
-  color: #fff;
-}
-
-#movie-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#movie-info img {
-  max-width: 300px;
-  border-radius: 10px;
-}
-
-#movie-info h3 {
-  margin: 20px 0 10px;
-}
-
-#movie-info p {
-  margin: 10px 0;
-}
-
-#back-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #ff3333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#back-button:hover {
-  background-color: #e60000;
-}
-
-.hidden {
-  display: none;
-}
-
-#share-section {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-#share-button,
-#copy-link-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#share-button:hover,
-#copy-link-button:hover {
-  background-color: #0056b3;
-}
-
-#recommendations {
-  margin: 20px 0;
-  padding: 20px;
-  background-color: #2c2c2c;
-  border-radius: 10px;
-}
-
-#recommended-movies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-#user-rating {
-  margin-top: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-#stars {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  font-size: 2em;
-  color: #ccc;
-}
-
-#stars .star {
-  cursor: pointer;
-}
-
-#stars .star.selected {
-  color: #ffcc00;
-}
-
-#user-rating-message {
-  margin-top: 10px;
-  font-style: italic;
-}
-
-#notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 15px;
-  background-color: #28a745;
-  color: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-#notification.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#notification.hidden {
+#movie-details.hidden {
   display: none;
 }
 
-#actor-search {
-  margin: 20px 0;
-  padding: 20px;
-  background-color: #2c2c2c;
-  border-radius: 10px;
+#movie-details h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-#actor-movies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-#movie-comparison {
-  margin: 20px 0;
-  padding: 20px;
-  background-color: #2c2c2c;
-  border-radius: 10px;
-}
-
-#comparison-container {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-.comparison-movie {
-  width: 45%;
-  background-color: #333;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.comparison-movie h3 {
-  margin-bottom: 15px;
-}
-
-.comparison-movie img {
+#movie-poster {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
-  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
-#user-rating {
+#movie-description {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.actions {
   margin-top: 20px;
 }
 
-#star-rating {
-  display: flex;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.star {
-  font-size: 2rem;
-  color: #ddd;
-}
-
-.star.selected,
-.star:hover,
-.star:hover ~ .star {
-  color: #ffbf00;
-}
-
-/* Adicionar ao CSS existente */
-#watch-later-button {
-  margin-top: 10px;
+.btn {
   padding: 10px 20px;
+  margin: 10px 5px;
   background-color: #ff6f61;
   color: white;
   border: none;
@@ -558,57 +145,157 @@ nav .menu a:hover {
   font-size: 1rem;
 }
 
-#watch-later-button:hover {
+.btn:hover {
   background-color: #ff856c;
 }
 
+/* Estilo do Loader */
 #loader {
   font-size: 1.5rem;
   text-align: center;
   padding: 20px;
   color: #ff6f61;
 }
-/* Responsividade */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  nav .search-bar {
-    width: 100%;
-    margin-top: 10px;
-  }
+#loader.hidden {
+  display: none;
+}
 
-  nav .search-bar input {
-    flex: 1;
-  }
+/* Avaliação do Usuário */
+#user-rating {
+  margin-top: 20px;
+}
 
-  nav .menu {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
+#user-rating h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
 
-  .carousel-container {
-    max-width: 100%;
-  }
+#star-rating {
+  display: flex;
+  justify-content: center;
+}
 
-  .movie-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ff6f61;
+  margin: 0 5px;
+}
 
-  .details {
-    margin-left: 0;
-    margin-top: 20px;
-    text-align: center;
-  }
+.star:hover,
+.star.selected {
+  color: #ff856c;
+}
 
-  .details iframe {
-    width: 100%;
-    height: auto;
-  }
+/* Seção de Compartilhamento */
+#share-section {
+  margin-top: 20px;
+}
+
+#share-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Recomendações de Filmes */
+#recommendations {
+  margin-top: 30px;
+}
+
+#recommendations h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#recommended-movies {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Seção de Favoritos e Assistir Mais Tarde */
+#favorites-list,
+#watch-later-list {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+#favorites-list h2,
+#watch-later-list h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#favorites-container,
+#watch-later-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Histórico de Pesquisa */
+#search-history {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+#search-history h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#history-list {
+  list-style: none;
+  text-align: center;
+}
+
+#history-list li {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+/* Comparação de Filmes */
+#movie-comparison {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#movie-comparison h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#comparison-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilo do Footer */
+footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 1rem;
 }
