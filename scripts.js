@@ -477,7 +477,7 @@ function loadMovieData(imdbID) {
     .then((data) => {
       console.log(data);
       showMovieDetails(data);
-      // Disparar evento para selecionar filme para comparação
+
       const event = new CustomEvent("selectMovieForComparison", {
         detail: { movieData: data },
       });
