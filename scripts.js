@@ -524,3 +524,15 @@ function setupWatchLater() {
   // Chamar loadWatchLaterList em algum lugar apropriado para carregar e exibir a lista
   loadWatchLaterList();
 }
+
+function loadMovieData(movieId) {
+  const loader = document.getElementById("loader");
+  loader.classList.remove("hidden");
+
+  // Simulação de carregamento de dados com setTimeout
+  setTimeout(() => {
+    // Função original para carregar dados do filme aqui
+
+    loader.classList.add("hidden");
+  }, 2000); // Substitua pelo tempo real de carregamento de dados
+}
