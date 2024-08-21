@@ -58,7 +58,58 @@ Avaliação e Compartilhamento: Inclui um sistema de avaliação por estrelas e 
 
 ## Explicação
 
-"Pequeno trecho do codigo do projeto"
+```
+document.getElementById('search-button').addEventListener('click', function () {
+const query = document.getElementById('search-bar').value.trim();
+if (query) {
+searchMovies(query);
+addToSearchHistory(query);
+}
+});
+
+```
+
+Explicação:
+Seleção do Botão de Busca:
+
+```
+document.getElementById('search-button')
+```
+
+Este trecho seleciona o botão de busca usando o id 'search-button'.
+
+Adiciona um Event Listener:
+
+```
+.addEventListener('click', function () {
+
+```
+
+Adiciona um ouvinte de eventos que executa uma função quando o botão de busca é clicado.
+
+Obtém o Valor da Barra de Pesquisa:
+
+```
+const query = document.getElementById('search-bar').value.trim();
+```
+
+Seleciona a barra de pesquisa ('search-bar'), obtém seu valor e remove espaços em branco extras nas extremidades usando o método trim().
+
+Verifica se a Consulta Não Está Vazia:
+
+javascript
+Copiar código
+if (query) {
+Verifica se a consulta (query) não está vazia para evitar buscas sem parâmetros.
+
+Chama Funções para Buscar Filmes e Atualizar Histórico:
+
+javascript
+Copiar código
+searchMovies(query);
+addToSearchHistory(query);
+searchMovies(query): Chama a função searchMovies passando a consulta para buscar filmes que correspondem ao texto inserido.
+addToSearchHistory(query): Chama a função addToSearchHistory para adicionar a consulta ao histórico de buscas.
 
 ## Como Usar
 
