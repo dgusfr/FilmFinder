@@ -36,8 +36,6 @@ FilmFinder é uma aplicação web projetada para ajudar os usuários a encontrar
 
 ![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
-<!-- -->
-
 ## Descrição
 
 FilmFinder é uma aplicação web que permite aos usuários buscar, explorar e organizar filmes. Através de uma interface intuitiva, os usuários podem encontrar filmes populares, ver detalhes de cada título, e adicionar filmes a listas de favoritos ou para assistir mais tarde. A aplicação também inclui histórico de buscas, um sistema de avaliação por estrelas e opções de compartilhamento para recomendar filmes a outras pessoas. Utiliza a API do The Movie Database (TMDb) para fornecer informações atualizadas sobre filmes.
