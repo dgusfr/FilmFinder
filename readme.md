@@ -1,6 +1,6 @@
 # "Nome do Projeto"
 
-"explicação rápida sobre o projeto"
+"explicação rápida sobre o projeto
 
 ## Interface
 
