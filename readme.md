@@ -44,7 +44,17 @@ FilmFinder é uma aplicação web que permite aos usuários buscar, explorar e o
 
 ## Funcionalidades
 
-"O que esses codigos fazem"
+Funcionalidade de Busca: Permite aos usuários buscar filmes usando uma barra de pesquisa. Os resultados são exibidos em um carrossel de filmes populares, que pode ser navegável.
+
+Detalhes do Filme: Ao selecionar um filme, o usuário vê detalhes extensivos, incluindo título, pôster, e descrição. Também pode adicionar o filme à lista de favoritos ou à lista de "Assistir Mais Tarde".
+
+Favoritos e Assistir Mais Tarde: O usuário pode gerenciar listas de filmes favoritos e aqueles que deseja assistir no futuro. As listas são exibidas em seções dedicadas.
+
+Histórico de Pesquisa: Armazena e exibe o histórico de buscas, permitindo que o usuário reexecute buscas anteriores com um clique.
+
+Comparação de Filmes: Permite comparar filmes lado a lado para facilitar a escolha.
+
+Avaliação e Compartilhamento: Inclui um sistema de avaliação por estrelas e uma função de compartilhamento para recomendar filmes.
 
 ## Explicação
 
