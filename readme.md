@@ -99,9 +99,24 @@ Verifica se a Consulta Não Está Vazia:
 
 ## Como Usar
 
-1.
-2.
-3.
+Buscar Filmes:
+
+Digite o nome do filme na barra de pesquisa no topo da página.
+Clique no botão de busca ao lado da barra para iniciar a busca.
+Os resultados serão exibidos em um carrossel de filmes populares.
+Visualizar Detalhes do Filme:
+
+Clique em qualquer filme no carrossel para ver seus detalhes.
+A seção de detalhes mostrará o título, pôster e descrição do filme selecionado.
+Gerenciar Listas:
+
+Adicione filmes à lista de favoritos clicando no botão de "Favoritos" na seção de detalhes do filme.
+Adicione filmes à lista de "Assistir Mais Tarde" clicando no botão correspondente.
+Veja e gerencie suas listas nas seções dedicadas à esquerda da página.
+Utilizar Histórico de Busca:
+
+O histórico de buscas é exibido em uma lista abaixo da barra de pesquisa.
+Clique em qualquer item no histórico para refazer a busca com a consulta correspondente.
 
 ## Autor
 
