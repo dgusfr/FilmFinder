@@ -1,6 +1,6 @@
-# "Nome do Projeto"
+# FilmeFinder
 
-"explicação rápida sobre o projeto
+FilmFinder é uma aplicação web projetada para ajudar os usuários a encontrar, avaliar e organizar filmes de forma intuitiva.
 
 ## Interface
 
