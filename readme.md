@@ -97,20 +97,6 @@ Seleciona a barra de pesquisa ('search-bar'), obtém seu valor e remove espaços
 
 Verifica se a Consulta Não Está Vazia:
 
-javascript
-Copiar código
-if (query) {
-Verifica se a consulta (query) não está vazia para evitar buscas sem parâmetros.
-
-Chama Funções para Buscar Filmes e Atualizar Histórico:
-
-javascript
-Copiar código
-searchMovies(query);
-addToSearchHistory(query);
-searchMovies(query): Chama a função searchMovies passando a consulta para buscar filmes que correspondem ao texto inserido.
-addToSearchHistory(query): Chama a função addToSearchHistory para adicionar a consulta ao histórico de buscas.
-
 ## Como Usar
 
 1.
